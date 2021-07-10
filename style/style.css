@@ -18,6 +18,15 @@ input {
   padding-bottom: 1rem;
 }
 
+.padding-bottom-2 {
+  padding-bottom: 2rem;
+}
+
+.padding-left-right-1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .navbar-citadelle {
   font-size: 2.5rem !important;
   font-weight: 200;
@@ -109,6 +118,7 @@ body main .mot-citadelle label {
 
 body main .mot-citadelle label:hover {
   color: white !important;
+  cursor: pointer;
 }
 
 body main .mot-citadelle label:before {
@@ -125,6 +135,7 @@ body main .mot-citadelle label:before {
 
 body main .mot-citadelle label:hover:before {
   width: 90%;
+  cursor: pointer;
 }
 
 body main .mot-citadelle input:checked + label {
@@ -208,6 +219,10 @@ body main .texte-fond-corail {
 
 .projet-margin {
   margin-bottom: 2rem;
+}
+
+.fin-de-page {
+  padding-bottom: 6rem;
 }
 
 @font-face {
