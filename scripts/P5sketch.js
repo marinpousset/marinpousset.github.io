@@ -6,7 +6,7 @@ let removeCountdown = removeFadingTime * 30 * 1.1; // removeFadingTime * frameRa
 let population = 40;
 
 const flock = [];
-let alignMult = 2;
+let alignMult = 1.5;
 let cohesionMult = 1;
 let separationMult = 2;
 let mouseSeparationMult = 30;
