@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Deep Ocean</title>
+    <meta name="description" content="KRILL"/>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-statuts-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="aframe-1-0-3.js"></script>
+    <script src="aframe-extras.js"></script>
+
+    <script src="js/howler-2.0.8.cor.js"></script>	
+	<!-- <script src="js/click-son-video.cod.js"></script> -->
+
+</head>
+
+<body>
+
+    <a-scene>
+
+        <a-assets>
+            <!-- <audio src="Deep Ocean Silence.mp3" preload="auto" autoplay>
+            </audio> -->
+            <a-asset-item id="dancer" src="Dancer3.glb"></a-asset-item>
+
+            <a-mixin id="oceanBase"
+            ocean="density: 22; width: 30; depth: 30; speed: 3">
+            </a-mixin>
+            <a-mixin id="oceanMerInf"
+				material="color: #FFFFFF; opacity: 1s; metalness: 0.2; roughness: 1"
+				
+				animation__techno1-color="property: material.color; delay: 13000; dur: 1000; from: #FFFFFF; to: #d1fff5; dir: alternate; loop: 32; easing : easeInOutQuad;"
+				animation__techno2-color="property: material.color; delay: 50000; dur: 4000; from: #FFFFFF; to: #E5D90B; easing : easeInOutQuad;"
+				animation__techno2b-color="property: material.color; delay: 54000; dur: 20000; from: #E5D90B; to: #0BE5BD; easing : linear;"
+				animation__techno2c-color="property: material.color; delay: 78000; dur: 20000; from: #0BE5BD; to: #6E6675; easing : linear;"
+				animation__techno2d-color="property: material.color; delay: 98000; dur: 20000; from: #6E6675; to: #7A124E; easing : linear;"
+				animation__bridge2Fin-color="property: material.color; delay: 124000; dur: 2000; from: #7A124E; to: #E0BB4E; easing : linear;"
+				animation__techno3-color="property: material.color; delay: 126000; dur: 4000; from: #E0BB4E; to: #308076; dir: alternate; loop: 6; easing : easeInOutQuad;"
+				animation__demiBridge-color="property: material.color; delay: 150000; dur: 1000; from: #2245C2; to: #D95C23; easing : easeInOutQuad;"
+				animation__techno3b-color="property: material.color; delay: 157000; dur: 4000; from: #D95C23; to: #6CDFD2; dir: alternate; loop: 6; easing : easeInOutQuad;"
+				animation__technoFinal-color="property: material.color; delay: 191000; dur: 4000; from: #6CDFD2; to: #57A36B; easing : easeInOutQuad;"
+				animation__ending1-color="property: material.color; delay: 221000; dur: 12000; from: #3CADDB; to: #FFFFFF; easing : easeInOutQuad;"
+				>
+            </a-mixin>
+            <a-mixin id="oceanMerSup"
+				material="color: #223388; opacity: 1; metalness: 0.7; roughness: 1; flatShading: true"
+
+				animation__techno1-color="property: material.color; delay: 13000; dur: 2000; from: #223388; to: #21797A; dir: alternate; loop: 14; easing : easeInOutQuad;"
+				animation__techno2-color="property: material.color; delay: 50000; dur: 4000; from: #223388; to: #083A4D; easing : easeInOutQuad;"
+				animation__techno2b-color="property: material.color; delay: 54000; dur: 20000; from: #083A4D; to: #8F2B35; easing : linear;"
+				animation__techno2c-color="property: material.color; delay: 78000; dur: 20000; from: #8F2B35; to: #C29955; easing : linear;"
+				animation__techno2d-color="property: material.color; delay: 98000; dur: 20000; from: #C29955; to: #23CFE0; easing : linear;"
+				animation__bridge2Fin-color="property: material.color; delay: 124000; dur: 2000; from: #23CFE0; to: #2245C2; easing : linear;"
+				animation__techno3-color="property: material.color; delay: 126000; dur: 4000; from: #2245C2; to: #E05F24; dir: alternate; loop: 6; easing : easeInOutQuad;"
+				animation__demiBridge-color="property: material.color; delay: 150000; dur: 1000; from: #2245C2; to: #0A46A1; easing : easeInOutQuad;"
+				animation__techno3b-color="property: material.color; delay: 157000; dur: 4000; from: #0A46A1; to: #CC131A; dir: alternate; loop: 6; easing : easeInOutQuad;"
+				animation__technoFinal-color="property: material.color; delay: 191000; dur: 4000; from: #CC131A; to: #3CADDB; easing : easeInOutQuad;"
+				animation__ending1-color="property: material.color; delay: 221000; dur: 12000; from: #3CADDB; to: #223388; easing : easeInOutQuad;"
+				>
+            </a-mixin>
+            <a-mixin id="oceanWfInf"
+				material="color: #FFFFFF; opacity: 1s; metalness: 0.2; roughness: 1; wireframe: true"
+				
+				animation__bridge1-color="property: material.color; delay: 45000; dur: 8000; from: #FFFFFF; to: #FFADA1; dir: alternate; loop: 1; easing : easeInOutQuad;"
+				animation__bridge2-color="property: material.color; delay: 117000; dur: 6000; from: #FFFFFF; to: #E0BB4E; dir: alternate; loop: 1; easing : easeInOutQuad;"
+				animation__bridge3-color="property: material.color; delay: 181000; dur: 6000; from: #FFFFFF; to: #CC131A; easing : linear;"
+				animation__ending2-color="property: material.color; delay: 230000; dur: 1000; from: #CC131A; to: #FFFFFF; easing : linear;"
+				>
+            </a-mixin>
+            <a-mixin id="oceanWfSup"
+				material="color: #000000; opacity: 1; metalness: 0.3; roughness: 1" rotation="-90 0 0"
+
+				animation__bridge2-color="property: material.color; delay: 117000; dur: 6000; from: #000000; to: #1D25C2; easing : linear;"
+				animation__bridge3-color="property: material.color; delay: 181000; dur: 6000; from: #1D25C2; to: #6CDFD2; easing : linear;"
+				animation__ending2-color="property: material.color; delay: 230000; dur: 1000; from: #6CDFD2; to: #000000; easing : linear;"
+				>
+            </a-mixin>
+
+            <a-mixin id="WfSol"
+                ocean="density: 30; width: 40; depth: 40; speed: 2"
+                material="color: #FFFFFF; opacity: 0.3; metalness: 0.2; roughness: 1; wireframe: true" rotation="-90 0 0"
+                position="0 -0.2 0"
+
+                animation__bridge1-Opacity="property: material.opacity; delay: 43000;from: 0.3; to: 0; dur: 2000;"
+                animation__bridge2-Opacity="property: material.opacity; delay: 117000;from: 0; to: 0.3; dur: 2000;"
+                animation__demiBridge="property: material.opacity; delay: 149000;from: 0.3; to: 0; dur: 2000;"
+                animation__demiBridgeFin="property: material.opacity; delay: 181000;from: 0; to: 0.3; dur: 2000;"
+			
+
+				>
+            </a-mixin>
+            <a-mixin id="WfCotes"
+                ocean="density: 30; width: 40; depth: 40; speed: 2"
+                material="color: #FFFFFF; opacity: 0; metalness: 0.2; roughness: 1; wireframe: true" 
+                
+                animation__bridge1-Opacity="property: material.opacity; delay: 45000;from: 0; to: 0.3; dur: 2000;"
+                animation__demiBridge="property: material.opacity; delay: 149000;from: 0.3; to: 0; dur: 2000;"
+                animation__demiBridgeFin="property: material.opacity; delay: 181000;from: 0; to: 0.3; dur: 2000;"
+                animation__ending1="property: material.opacity; delay: 221000;from: 0.3; to: 0; dur: 2000;"
+			
+				animation__bridge1-color="property: material.color; delay: 45000; dur: 8000; from: #FFFFFF; to: #FFADA1; dir: alternate; loop: 1; easing : easeInOutQuad;"
+				>
+            </a-mixin>
+            
+
+
+        </a-assets>
+
+        <a-entity>
+            <a-camera look-controls position="0 1.3 0"></a-camera>
+        </a-entity>
+
+
+
+        <a-entity id="light" light="type: ambient; color: #FFFFFF intensity: 10"></a-entity>
+        <a-entity id="light" light="type: directional; color: #FFFFFF; intensity: 0" position="0 1 0"
+            animation__techno1="property: light.intensity; delay : 13000; dur: 500; from: 5.5; to: 2.0; easing : easeOutSine;loop: 64"
+			animation__bridge1="property: light.intensity; delay : 45000; dur: 4000; from: 2.0; to: 0.3; dir: alternate; loop: 1; easing : easeInOutQuad;"
+			animation__techno2="property: light.intensity; delay : 53000; dur: 2000; from: 2.0; to: 3.5; easing : easeInOutQuad;"
+			animation__techno2-color="property: light.color; delay: 53000; dur: 20000; from: #FFFFFF; to: #0000FF; easing : linear;"
+			animation__techno2b-color="property: light.color; delay: 73000; dur: 20000; from: #0000FF; to: #CC3045; easing : linear;"
+			animation__techno2c-color="property: light.color; delay: 93000; dur: 20000; from: #CC3045; to: #E0D573; easing : linear;"
+			animation__bridge2-color="property: light.color; delay: 116000; dur: 2000; from: #E0D573; to: #FFFFFF; easing : linear;"
+			animation__bridge2Fin-color="property: light.color; delay: 124000; dur: 2000; from: #FFFFFF; to: #00DEFF; easing : linear;"
+			animation__techno3="property: light.intensity; delay : 126000; dur: 2000; from: 5.5; to: 2.0; easing : easeOutSine; loop: 27"
+			animation__techno3-color="property: light.color; delay: 126000; dur: 60000; from: #00DEFF; to: #FFDEFF; easing : linear;"
+			animation__bridge3="property: light.intensity; delay : 181000; dur: 2000; from: 2.0; to: 4.0; easing : easeOutSine;"
+			animation__bridge3-color="property: light.color; delay: 181000; dur: 4000; from: #FFDEFF; to: #59F2FF; easing : linear;"
+			animation__technoFinal-color="property: light.color; delay: 191000; dur: 500; from: #FF4B45; to: #59F2FF; easing : easeInOutQuad; loop: 60;"
+			animation__technoFinal-color="property: light.color; delay: 221000; dur: 2000; from: #59F2FF; to: #FFFFFF; easing : easeInOutQuad; loop: 60;"
+			animation__ending1="property: light.intensity; delay : 221000; dur: 30000; from: 4.0; to: 2.0; easing : linear;"
+			animation__ending2="property: light.intensity; delay : 253000; dur: 10000; from: 2.0; to: 0; easing : linear;"
+		></a-entity>
+
+        <!--        SOL        -->
+        <a-entity id="ocean" ocean="density: 30; width: 40; depth: 40; : 1"
+            material="color: #222222; opacity: 0.5; metalness: 0.7; roughness: 1;" rotation="-90 0 0" position="0 -0.2 0">
+        </a-entity>
+        <a-entity id="ocean"
+            ocean="density: 30; width: 40; depth: 40; speed: 2; amplitude: 0.100; amplitudeVariance: 0.3"
+            material="color: #444444; opacity: 0.4; metalness: 0; roughness: 1; flatShading: true" rotation="-90 0 0"
+            position="0 -0.6 0"
+            animation__1="property: material.opacity; dur: 3000; to: 0.1; dir: alternate; loop: true"
+            animation__2="property: material.metalness; dur:500; to: 0.5; loop: true">
+        </a-entity>
+        <a-entity id="ocean" ocean="density: 30; width: 40; depth: 40; speed: 1"
+			material="color: #888888; opacity: 0.5; metalness: 0.2; roughnspeedess: 1; wireframe: true" rotation="-90 0 0" position="0 -0.2 0"
+			
+			animation__bridge1-color="property: material.color; delay: 45000; dur: 8000; from: #FFFFFF; to: #FFADA1; dir: alternate; loop: 1; easing : easeInOutQuad;"
+			>
+        </a-entity>
+
+ 
+
+
+        <!--        MUR  EAU Gauche       -->
+        <a-entity id="cubeMer" position="0 0 0" rotation="0 0 0"
+            animation__techno3="property: rotation; dur: 30000; delay: 126000; to: 180 180 180; dir: alternate; easing : easeInOutQuad; loop: 3;"
+        >
+            <a-entity id="merGaucheInf" mixin="oceanBase oceanMerInf"
+                rotation="0 90 0" position="-14 0 0"
+                animation__techno1="property: position; delay : 13000; dur: 2000; dir: alternate; to: -11 0 0; easing : easeInOutQuad; loop: 14"
+                animation__techno1Fin="property: position; delay : 45000; dur: 3000; to: -16 0 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay : 51000; dur: 2000; from: -16 0 0; to: -14 0 0; easing : easeInOutQuad;"
+                animation__techno2="property: position; delay : 53000; dur: 4000; from: -14 0 0; to: -11 0 0; dir: alternate; easing : easeInOutQuad;  loop: 12;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: -14 0 0; to: -15 0 0; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: -15 0 0; to: -12 0 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: -12 0 0; to: -14 0 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: -14 0 0; to: -12 0 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: -12 0 0; to: -14 0 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending1="property: position; delay : 221000; dur: 30000; from: -12 0 0; to: -8.5 0 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+            <a-entity id="merGaucheSup" mixin="oceanBase oceanMerSup"
+                rotation="0 90 0" position="-13.8 0 0"
+                animation__techno1="property: position; delay : 13000; dur: 2000; dir: alternate; to: -10.8 0 0; easing : easeInOutQuad; loop: 14"
+                animation__techno1Fin="property: position; delay : 45000; dur: 3000; to: -15.8 0 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay : 51000; dur: 2000; from: -15.8 0 0; to: -13.8 0 0; easing : easeInOutQuad;"
+                animation__techno2="property: position; delay : 53000; dur: 4000; from: -13.8 0 0; to: -10.8 0; dir: alternate; easing : easeInOutQuad;  loop: 12;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: -13.8 0 0; to: -14.8 0 0; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: -14.8 0 0; to: -11.8 0 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: -11.8 0 0; to: -13.8 0 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: -13.8 0 0; to: -11.8 0 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: -11.8 0 0; to: -13.8 0 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending1="property: position; delay : 221000; dur: 30000; from: -11.8 0 0; to: -8 0 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+
+            <!--        MUR EAU Droite      -->
+            <a-entity id="merDroiteInf" mixin="oceanBase oceanMerInf"
+                rotation="180 90 0" position="14 0 0"
+                animation__techno1="property: position; delay : 13000; dur: 2000; dir: alternate; to: 12 0 0; easing : easeInOutQuad; loop: 14"
+                animation__techno1Fin="property: position; delay : 45000; dur: 3000; to: 16 0 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay : 51000; dur: 2000; from: 16 0 0; to: 14 0 0; easing : easeInOutQuad;"
+                animation__techno2="property: position; delay : 53000; dur: 4000; from: 14 0 0; to: 11 0 0; dir: alternate; easing : easeInOutQuad;  loop: 12;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 14 0 0; to: 15 0 0; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 15 0 0; to: 12 0 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 12 0 0; to: 14 0 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 14 0 0; to: 12 0 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 12 0 0; to: 14 0 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending1="property: position; delay : 221000; dur: 30000; from: 12 0 0; to: 8.5 0 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+            <a-entity id="merDroiteSup" mixin="oceanBase oceanMerSup"
+                rotation="180 90 0" position="13.8 0 0"
+                animation__techno1="property: position; delay : 13000; dur: 2000; dir: alternate; to: 11.8 0 0; easing : easeInOutQuad; loop: 14"
+                animation__techno1Fin="property: position; delay : 45000; dur: 3000; to: 15.8 0 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay : 51000; dur: 2000; from: 15.8 0 0; to: 13.8 0 0; easing : easeInOutQuad;"
+                animation__techno2="property: position; delay : 53000; dur: 4000; from: 13.8 0 0; to: 10.8 0; dir: alternate; easing : easeInOutQuad;  loop: 12;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 13.8 0 0; to: 14.8 0 0; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 14.8 0 0; to: 11.8 0 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 11.8 0 0; to: 13.8 0 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 13.8 0 0; to: 11.8 0 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 11.8 0 0; to: 13.8 0 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending1="property: position; delay : 221000; dur: 30000; from: 11.8 0 0; to: 8 0 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+
+            <!--        MUR  EAU Face       -->
+            <a-entity id="merFaceInf" mixin="oceanBase oceanMerInf"
+                rotation="0 0 0" position="0 0 -14"
+                animation__techno1="property: position; delay : 13000; dur: 2000; dir: alternate; to: 0 0 -12; easing : easeInOutQuad; loop: 14"
+                animation__techno1Fin="property: position; delay : 45000; dur: 3000; to: 0 0 -16; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay : 51000; dur: 2000; from: 0 0 -16; to: 0 0 -14; easing : easeInOutQuad;"
+                animation__techno2="property: position; delay : 53000; dur: 4000; from: 0 0 -14; to: 0 0 -11; dir: alternate; easing : easeInOutQuad;  loop: 12;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 0 -14; to: 0 0 -15; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 0 -15; to: 0 0 -12; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 0 -12; to: 0 0 -14; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 0 -14; to: 0 0 -12; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 0 -12; to: 0 0 -14; easing : easeInOutQuad; loop: 12;"
+                animation__ending1="property: position; delay : 221000; dur: 30000; from: 0 0 -12; to: 0 0 -8.5; easing : easeInOutQuad;"
+                >
+            </a-entity>
+            <a-entity id="merFaceSup" mixin="oceanBase oceanMerSup"
+                rotation="0 0 0" position="0 0 -13.8"
+                animation__techno1="property: position; delay : 13000; dur: 2000; dir: alternate; to: 0 0 -11.8; easing : easeInOutQuad; loop: 14"
+                animation__techno1Fin="property: position; delay : 45000; dur: 3000; to: 0 0 -15.8; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay : 51000; dur: 2000; from: 0 0 -15.8; to: 0 0 -13.8; easing : easeInOutQuad;"
+                animation__techno2="property: position; delay : 53000; dur: 4000; from: 0 0 -13.8; to: 0 0 -10.8; dir: alternate; easing : easeInOutQuad;  loop: 12;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 0 -13.8; to: 0 0 -14.8; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 0 -14.8; to: 0 0 -11.8; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 0 -11.8; to: 0 0 -13.8; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 0 -13.8; to: 0 0 -11.8; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 0 -11.8; to: 0 0 -13.8; easing : easeInOutQuad; loop: 12;"
+                animation__ending1="property: position; delay : 221000; dur: 30000; from: 0 0 -11.8; to: 0 0 -8; easing : easeInOutQuad;"
+                >
+            </a-entity>
+
+            <!--        MUR EAU Dos      -->
+            <a-entity id="merDosInf" mixin="oceanBase oceanMerInf"
+                rotation="180 0 0" position="0 0 14"
+                animation__techno1="property: position; delay : 13000; dur: 2000; dir: alternate; to: 0 0 12; easing : easeInOutQuad; loop: 14"
+                animation__techno1Fin="property: position; delay : 45000; dur: 3000; to: 0 0 16; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay : 51000; dur: 2000; from: 0 0 16; to: 0 0 14; easing : easeInOutQuad;"
+                animation__techno2="property: position; delay : 53000; dur: 4000; from: 0 0 14; to: 0 0 11; dir: alternate; easing : easeInOutQuad;  loop: 12;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 0 14; to: 0 0 15; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 0 15; to: 0 0 12; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 0 12; to: 0 0 14; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 0 14; to: 0 0 12; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 0 12; to: 0 0 14; easing : easeInOutQuad; loop: 12;"
+                animation__ending1="property: position; delay : 221000; dur: 30000; from: 0 0 12; to: 0 0 8.5; easing : easeInOutQuad;"
+                >
+            </a-entity>
+            <a-entity id="merDosSup" mixin="oceanBase oceanMerSup"
+                rotation="180 0 0" position="0 0 13.8"
+                animation__techno1="property: position; delay : 13000; dur: 2000; dir: alternate; to: 0 0 11.8; easing : easeInOutQuad; loop: 14"
+                animation__techno1Fin="property: position; delay : 45000; dur: 3000; to: 0 0 15.8; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay : 51000; dur: 2000; from: 0 0 15.8; to: 0 0 13.8; easing : easeInOutQuad;"
+                animation__techno2="property: position; delay : 53000; dur: 4000; from: 0 0 13.8; to: 0 0 10.8; dir: alternate; easing : easeInOutQuad;  loop: 12;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 0 13.8; to: 0 0 14.8; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 0 14.8; to: 0 0 11.8; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 0 11.8; to: 0 0 13.8; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 0 13.8; to: 0 0 11.8; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 0 11.8; to: 0 0 13.8; easing : easeInOutQuad; loop: 12;"
+                animation__ending1="property: position; delay : 221000; dur: 30000; from: 0 0 11.8; to: 0 0 8; easing : easeInOutQuad;"
+                >
+            </a-entity>
+
+            <!--        MUR  EAU Plafond       -->
+            <a-entity id="merPlafondInf" mixin="oceanBase oceanMerInf"
+                rotation="90 0 0" position="0 14 0"
+                animation__techno1="property: position; delay : 13000; dur: 2000; dir: alternate; to: 0 10 0; easing : easeInOutQuad; loop: 14"
+                animation__techno1Fin="property: position; delay : 45000; dur: 3000; to: 0 16 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay : 51000; dur: 2000; from: 0 16 0; to: 0 14 0; easing : easeInOutQuad;"
+                animation__techno2="property: position; delay : 53000; dur: 10000; from: 0 14 0; to: 0 5 0; easing : easeInOutQuad;"
+                animation__techno2b="property: position; delay : 84000; dur: 3000; from: 0 5 0; to: 0 4 0; easing : easeInOutQuad;"
+                animation__techno2c="property: position; delay : 91000; dur: 3000; from: 0 4 0; to: 0 3 0; easing : easeInOutQuad;"
+                animation__techno2d="property: position; delay : 96000; dur: 20000; from: 0 3 0; to: 0 14 0; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 14 0; to: 0 15 0; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 15 0; to: 0 12 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 12 0; to: 0 14 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 14 0; to: 0 12 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 12 0; to: 0 14 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending1="property: position; delay : 221000; dur: 30000; from: 0 12 0; to: 0 5.5 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+            <a-entity id="merPlafondSup" mixin="oceanBase oceanMerSup"
+                rotation="90 0 0" position="0 13.8 0"
+                animation__techno1="property: position; delay : 13000; dur: 2000; dir: alternate; to: 0 9.8 0; easing : easeInOutQuad; loop: 14"
+                animation__techno1Fin="property: position; delay : 45000; dur: 3000; to: 0 15.8 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay : 51000; dur: 2000; from: 0 15.8 0; to: 0 13.8 0; easing : easeInOutQuad;"
+                animation__techno2="property: position; delay : 53000; dur: 10000; from: 0 13.8 0; to: 0 4.8 0; easing : easeInOutQuad;"
+                animation__techno2b="property: position; delay : 84000; dur: 3000; from: 0 4.8 0; to: 0 3.8 0; easing : easeInOutQuad;"
+                animation__techno2c="property: position; delay : 91000; dur: 3000; from: 0 3.8 0; to: 0 2.8 0; easing : easeInOutQuad;"
+                animation__techno2d="property: position; delay : 96000; dur: 20000; from: 0 2.8 0; to: 0 13.8 0; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 13.8 0; to: 0 14.8 0; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 14.8 0; to: 0 11.8 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 11.8 0; to: 0 13.8 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 13.8 0; to: 0 11.8 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 11.8 0; to: 0 13.8 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending1="property: position; delay : 221000; dur: 30000; from: 0 11.8 0; to: 0 5 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+
+            <!--        MUR EAU Sol      -->
+            <a-entity id="merSolInf" mixin="oceanBase oceanMerInf"
+                rotation="-90 0 0" position="0 -14 0"
+                animation__techno1="property: position; delay : 13000; dur: 2000; dir: alternate; to: 0 -10 0; easing : easeInOutQuad; loop: 14"
+                animation__techno1Fin="property: position; delay : 45000; dur: 3000; to: 0 -16 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay : 51000; dur: 2000; from: 0 -16 0; to: 0 -14 0; easing : easeInOutQuad;"
+                animation__techno2="property: position; delay : 53000; dur: 10000; from: 0 -14 0; to: 0 -5 0; easing : easeInOutQuad;"
+                animation__techno2b="property: position; delay : 84000; dur: 3000; from: 0 -5 0; to: 0 -4 0; easing : easeInOutQuad;"
+                animation__techno2c="property: position; delay : 91000; dur: 3000; from: 0 -4 0; to: 0 -3 0; easing : easeInOutQuad;"
+                animation__techno2d="property: position; delay : 96000; dur: 20000; from: 0 -3 0; to: 0 -14 0; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 -14 0; to: 0 -15 0; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 -15 0; to: 0 -12 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 -12 0; to: 0 -14 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 -14 0; to: 0 -12 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 -12 0; to: 0 -14 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending1="property: position; delay : 221000; dur: 30000; from: 0 -12 0; to: 0 -5.5 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+            <a-entity id="merSolSup" mixin="oceanBase oceanMerSup"
+                rotation="-90 0 0" position="0 -13.8 0"
+                animation__techno1="property: position; delay : 13000; dur: 2000; dir: alternate; to: 0 -9.8 0; easing : easeInOutQuad; loop: 14"
+                animation__techno1Fin="property: position; delay : 45000; dur: 3000; to: 0 -15.8 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay : 51000; dur: 2000; from: 0 -15.8 0; to: 0 -13.8 0; easing : easeInOutQuad;"
+                animation__techno2="property: position; delay : 53000; dur: 10000; from: 0 -13.8 0; to: 0 -4.8 0; easing : easeInOutQuad;"
+                animation__techno2b="property: position; delay : 84000; dur: 3000; from: 0 -4.8 0; to: 0 -3.8 0; easing : easeInOutQuad;"
+                animation__techno2c="property: position; delay : 91000; dur: 3000; from: 0 -3.8 0; to: 0 -2.8 0; easing : easeInOutQuad;"
+                animation__techno2d="property: position; delay : 96000; dur: 20000; from: 0 -2.8 0; to: 0 -13.8 0; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 -13.8 0; to: 0 -14.8 0; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 -14.8 0; to: 0 -11.8 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 -11.8 0; to: 0 -13.8 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 -13.8 0; to: 0 -11.8 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 -11.8 0; to: 0 -13.8 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending1="property: position; delay : 221000; dur: 30000; from: 0 -11.8 0; to: 0 -5 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+        </a-entity>
+        
+
+
+
+
+        <a-entity id="cubeWf" position="0 0 0" rotation="0 0 0"
+            animation__techno3="property: rotation; dur: 30000; delay: 126000; to: 180 180 180; dir: alternate; easing : easeInOutQuad; loop: 3;"
+        >
+            <!--        MUR  WF Gauche       -->
+            <a-entity id="wfGaucheInf" mixin="oceanBase oceanWfInf"
+                rotation="0 90 0" position="-13 0 0"
+                animation__introFin="property: position; delay: 13000; dur: 3000; to: -15 0 0; easing : easeInOutQuad;"
+                animation__techno1Fin="property: position; delay: 44000; dur: 2000; from: -15 0 0; to: -14 0 0; easing : easeInOutQuad;"
+                animation__bridge1="property: position; delay: 46000; dur: 6000; from: -14 0 0; to: -7 0 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay: 52000; dur: 1500; from: -7 0 0; to: -16 0 0; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: -16 0 0; to: -12 0 0; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: -12 0 0; to: -14 0 0; easing : easeInOutQuad;"
+                animation__demiBridge="property: position; delay : 149000; dur: 2000; from: -14 0 0; to: -11 0 0; easing : easeInOutQuad;"
+                animation__demiBridgeFin="property: position; delay : 157000; dur: 2000; from: -11 0 0; to: -14 0 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: -14 0 0; to: -11 0 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: -11 0 0; to: -14 0 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: -14 0 0; to: -12 0 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending2="property: position; delay : 253000; dur: 2000; from: -9 0 0; to: -7.5 0 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+            <a-entity id="wfGaucheSup" mixin="oceanBase oceanWfSup"
+                rotation="0 90 0" position="-12.8 0 0"
+                animation__introFin="property: position; delay: 13000; dur: 3000; to: -14.8 0 0; easing : easeInOutQuad;"
+                animation__techno1Fin="property: position; delay: 44000; dur: 2000; from: -14.8 0 0; to: -13.8 0 0; easing : easeInOutQuad;"
+                animation__bridge1="property: position; delay: 46000; dur: 6000; from: -13.8 0 0; to: -6.8 0 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay: 52000; dur: 1500; from: -6.8 0 0; to: -15.8 0 0; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: -15.8 0 0; to: -11.8 0 0; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: -11.8 0 0; to: -13.8 0 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: -13.8 0 0; to: -10.8 0 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: -10.8 0 0; to: -13.8 0 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: -13.8 0 0; to: -11.8 0 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending2="property: position; delay : 253000; dur: 2000; from: -8.8 0 0; to: -7.3 0 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+
+            <!--        MUR WF Droite      -->
+            <a-entity id="wfDroiteInf" mixin="oceanBase oceanWfInf"
+                rotation="180 90 0" position="13 0 0"
+                animation__introFin="property: position; delay: 13000; dur: 3000; to: 15 0 0; easing : easeInOutQuad;"
+                animation__techno1Fin="property: position; delay: 44000; dur: 2000; from: 15 0 0; to: 14 0 0; easing : easeInOutQuad;"
+                animation__bridge1="property: position; delay: 46000; dur: 6000; from: 14 0 0; to: 7 0 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay: 52000; dur: 1500; from: 7 0 0; to: 16 0 0; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 16 0 0; to: 12 0 0; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 12 0 0; to: 14 0 0; easing : easeInOutQuad;"
+                animation__demiBridge="property: position; delay : 149000; dur: 2000; from: 14 0 0; to: 11 0 0; easing : easeInOutQuad;"
+                animation__demiBridgeFin="property: position; delay : 157000; dur: 2000; from: 11 0 0; to: 14 0 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 14 0 0; to: 11 0 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 11 0 0; to: 14 0 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 14 0 0; to: 12 0 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending2="property: position; delay : 253000; dur: 2000; from: 9 0 0; to: 7.5 0 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+            <a-entity id="wfDroiteSup" mixin="oceanBase oceanWfSup"
+                rotation="180 90 0" position="12.8 0 0"
+                animation__introFin="property: position; delay: 13000; dur: 3000; to: 14.8 0 0; easing : easeInOutQuad;"
+                animation__techno1Fin="property: position; delay: 44000; dur: 2000; from: 14.8 0 0; to: 13.8 0 0; easing : easeInOutQuad;"
+                animation__bridge1="property: position; delay: 46000; dur: 6000; from: 13.8 0 0; to: 6.8 0 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay: 52000; dur: 1500; from: 6.8 0 0; to: 15.8 0 0; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 15.8 0 0; to: 11.8 0 0; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 11.8 0 0; to: 13.8 0 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 13.8 0 0; to: 10.8 0 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 10.8 0 0; to: 13.8 0 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 13.8 0 0; to: 11.8 0 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending2="property: position; delay : 253000; dur: 2000; from: 8.8 0 0; to: 7.3 0 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+
+            <!--        MUR  WF Face       -->
+            <a-entity id="wfFaceInf" mixin="oceanBase oceanWfInf"
+                rotation="0 0 0" position="0 0 -13"
+                animation__introFin="property: position; delay: 13000; dur: 3000; to: 0 0 -15; easing : easeInOutQuad;"
+                animation__techno1Fin="property: position; delay: 44000; dur: 2000; from: 0 0 -15; to: 0 0 -14; easing : easeInOutQuad;"
+                animation__bridge1="property: position; delay: 46000; dur: 7000; from: 0 0 -14; to: 0 0 -7; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay: 52000; dur: 1500; from: 0 0 -7; to: 0 0 -16; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 0 -16; to: 0 0 -12; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 0 -12; to: 0 0 -14; easing : easeInOutQuad;"
+                animation__demiBridge="property: position; delay : 149000; dur: 2000; from: 0 0 -14; to: 0 0 -11; easing : easeInOutQuad;"
+                animation__demiBridgeFin="property: position; delay : 157000; dur: 2000; from: 0 0 -11; to: 0 0 -14; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 0 -14; to: 0 0 -11; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 0 -11; to: 0 0 -14; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 0 -14; to: 0 0 -12; easing : easeInOutQuad; loop: 12;"
+                animation__ending2="property: position; delay : 253000; dur: 2000; from: 0 0 -9; to: 0 0 -7.5; easing : easeInOutQuad;"
+                >
+            </a-entity>
+            <a-entity id="wfFaceSup" mixin="oceanBase oceanWfSup"
+                rotation="0 0 0" position="0 0 -12.8"
+                animation__introFin="property: position; delay: 13000; dur: 3000; to: 0 0 -14.8; easing : easeInOutQuad;"
+                animation__techno1Fin="property: position; delay: 44000; dur: 2000; from: 0 0 -14.8; to: 0 0 -13.8; easing : easeInOutQuad;"
+                animation__bridge1="property: position; delay: 46000; dur: 7000; from: 0 0 -13.8; to: 0 0 -6.8; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay: 52000; dur: 1500; from: 0 0 -6.8; to: 0 0 -15.8; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 0 -15.8; to: 0 0 -11.8; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 0 -11.8; to: 0 0 -13.8; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 0 -13.8; to: 0 0 -10.8; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 0 -10.8; to: 0 0 -13.8; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 0 -13.8; to: 0 0 -11.8; easing : easeInOutQuad; loop: 12;"
+                animation__ending2="property: position; delay : 253000; dur: 2000; from: 0 0 -8.8; to: 0 0 -7.3; easing : easeInOutQuad;"
+                >
+            </a-entity>
+
+            <!--        MUR WF Dos      -->
+            <a-entity id="wfDosInf" mixin="oceanBase oceanWfInf"
+                rotation="180 0 0" position="0 0 13"
+                animation__introFin="property: position; delay: 13000; dur: 3000; to: 0 0 15; easing : easeInOutQuad;"
+                animation__techno1Fin="property: position; delay: 44000; dur: 2000; from: 0 0 15; to: 0 0 14; easing : easeInOutQuad;"
+                animation__bridge1="property: position; delay: 46000; dur: 7000; from: 0 0 14; to: 0 0 7; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay: 52000; dur: 1500; from: 0 0 7; to: 0 0 16; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 0 16; to: 0 0 12; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 0 12; to: 0 0 14; easing : easeInOutQuad;"
+                animation__demiBridge="property: position; delay : 149000; dur: 2000; from: 0 0 14; to: 0 0 11; easing : easeInOutQuad;"
+                animation__demiBridgeFin="property: position; delay : 157000; dur: 2000; from: 0 0 11; to: 0 0 14; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 0 14; to: 0 0 11; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 0 11; to: 0 0 14; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 0 14; to: 0 0 12; easing : easeInOutQuad; loop: 12;"
+                animation__ending2="property: position; delay : 253000; dur: 2000; from: 0 0 9; to: 0 0 7.5; easing : easeInOutQuad;"
+                >
+            </a-entity>
+            <a-entity id="wfDosSup" mixin="oceanBase oceanWfSup"
+                rotation="180 0 0" position="0 0 12.8"
+                animation__introFin="property: position; delay: 13000; dur: 3000; to: 0 0 14.8; easing : easeInOutQuad;"
+                animation__techno1Fin="property: position; delay: 44000; dur: 2000; from: 0 0 14.8; to: 0 0 13.8; easing : easeInOutQuad;"
+                animation__bridge1="property: position; delay: 46000; dur: 7000; from: 0 0 13.8; to: 0 0 6.8; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay: 52000; dur: 1500; from: 0 0 6.8; to: 0 0 15.8; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 0 15.8; to: 0 0 12.8; easing : easeInOutQuad;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 0 11.8; to: 0 0 13.8; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 0 13.8; to: 0 0 10.8; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 0 10.8; to: 0 0 13.8; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 0 13.8; to: 0 0 11.8; easing : easeInOutQuad; loop: 12;"
+                animation__ending2="property: position; delay : 253000; dur: 2000; from: 0 0 8.8; to: 0 0 7.3; easing : easeInOutQuad;"
+                > 
+            </a-entity>
+
+            <!--        MUR  WF Plafond       -->
+            <a-entity id="wfPlafondInf" mixin="oceanBase oceanWfInf"
+                rotation="90 0 0" position="0 13 0"
+                animation__introFin="property: position; delay: 13000; dur: 3000; to: 0 15 0; easing : easeInOutQuad;"
+                animation__techno1Fin="property: position; delay: 44000; dur: 2000; from: 0 15 0; to: 0 14 0; easing : easeInOutQuad;"
+                animation__bridge1="property: position; delay: 46000; dur: 7000; from: 0 14 0; to: 0 7 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay: 52000; dur: 1500; from: 0 7 0; to: 0 16 0; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 16 0; to: 0 12 0; easing : easeInOutQuad;"
+                animation__bridge2b="property: position; delay : 118000; dur: 3000; dir: alternate; from: 0 12 0; to: 0 4 0; easing : easeInOutQuad; loop: 1;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 12 0; to: 0 14 0; easing : easeInOutQuad;"
+                animation__demiBridge="property: position; delay : 149000; dur: 2000; from: 0 14 0; to: 0 11 0; easing : easeInOutQuad;"
+                animation__demiBridgeFin="property: position; delay : 157000; dur: 2000; from: 0 11 0; to: 0 14 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 14 0; to: 0 11 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 11 0; to: 0 14 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 14 0; to: 0 12 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending2="property: position; delay : 253000; dur: 2000; from: 0 6 0; to: 0 4 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+            <a-entity id="wfPlafondSup" mixin="oceanBase oceanWfSup"
+                rotation="90 0 0" position="0 12.8 0"
+                animation__introFin="property: position; delay: 13000; dur: 3000; to: 0 14.8 0; easing : easeInOutQuad;"
+                animation__techno1Fin="property: position; delay: 44000; dur: 2000; from: 0 14.8 0; to: 0 13.8 0; easing : easeInOutQuad;"
+                animation__bridge1="property: position; delay: 46000; dur: 7000; from: 0 13.8 0; to: 0 6.8 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay: 52000; dur: 1500; from: 0 6.8 0; to: 0 15.8 0; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 15.8 0; to: 0 11.8 0; easing : easeInOutQuad;"
+                animation__bridge2b="property: position; delay : 118000; dur: 3000; dir: alternate; from: 0 11.8 0; to: 0 3.8 0; easing : easeInOutQuad; loop: 1;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 11.8 0; to: 0 13.8 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 13.8 0; to: 0 10.8 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 10.8 0; to: 0 13.8 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 13.8 0; to: 0 11.8 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending2="property: position; delay : 253000; dur: 2000; from: 0 5.8 0; to: 0 3.8 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+
+            <!--        MUR WF Sol      -->
+            <a-entity id="wfSolInf" mixin="oceanBase oceanWfInf"
+                rotation="-90 0 0" position="0 -13 0"
+                animation__introFin="property: position; delay: 13000; dur: 3000; to: 0 -15 0; easing : easeInOutQuad;"
+                animation__techno1Fin="property: position; delay: 44000; dur: 2000; from: 0 -15 0; to: 0 -14 0; easing : easeInOutQuad;"
+                animation__bridge1="property: position; delay: 46000; dur: 7000; from: 0 -14 0; to: 0 -7 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay: 52000; dur: 1500; from: 0 -7 0; to: 0 -16 0; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 -16 0; to: 0 -12 0; easing : easeInOutQuad;"
+                animation__bridge2b="property: position; delay : 118000; dur: 3000; dir: alternate; from: 0 -12 0; to: 0 -4 0; easing : easeInOutQuad; loop: 1;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 -12 0; to: 0 -14 0; easing : easeInOutQuad;"
+                animation__demiBridge="property: position; delay : 149000; dur: 2000; from: 0 -14 0; to: 0 -11 0; easing : easeInOutQuad;"
+                animation__demiBridgeFin="property: position; delay : 157000; dur: 2000; from: 0 -11 0; to: 0 -14 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 -14 0; to: 0 -11 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 -11 0; to: 0 -14 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 -14 0; to: 0 -12 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending2="property: position; delay : 253000; dur: 2000; from: 0 -6 0; to: 0 -4 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+            <a-entity id="wfSolSup" mixin="oceanBase oceanWfSup"
+                rotation="-90 0 0" position="0 -12.8 0"
+                animation__introFin="property: position; delay: 13000; dur: 3000; to: 0 -14.8 0; easing : easeInOutQuad;"
+                animation__techno1Fin="property: position; delay: 44000; dur: 2000; from: 0 -14.8 0; to: 0 -13.8 0; easing : easeInOutQuad;"
+                animation__bridge1="property: position; delay: 46000; dur: 7000; from: 0 -13.8 0; to: 0 -6.8 0; easing : easeInOutQuad;"
+                animation__bridge1Fin="property: position; delay: 52000; dur: 1500; from: 0 -6.8 0; to: 0 -15.8 0; easing : easeInOutQuad;"
+                animation__bridge2="property: position; delay : 116000; dur: 2000; from: 0 -15.8 0; to: 0 -11.8 0; easing : easeInOutQuad;"
+                animation__bridge2b="property: position; delay : 118000; dur: 3000; dir: alternate; from: 0 -11.8 0; to: 0 -3.8 0; easing : easeInOutQuad; loop: 1;"
+                animation__bridge2Fin="property: position; delay : 124000; dur: 2000; from: 0 -11.8 0; to: 0 -13.8 0; easing : easeInOutQuad;"
+                animation__bridge3="property: position; delay : 181000; dur: 2000; from: 0 -13.8 0; to: 0 -10.8 0; easing : easeInOutQuad;"
+                animation__bridge3Fin="property: position; delay : 189000; dur: 2000; from: 0 -10.8 0; to: 0 -13.8 0; easing : easeInOutQuad;"
+                animation__technoFinal="property: position; delay : 191000; dur: 2000; dir: alternate; from: 0 -13.8 0; to: 0 -11.8 0; easing : easeInOutQuad; loop: 12;"
+                animation__ending2="property: position; delay : 253000; dur: 2000; from: 0 -5.8 0; to: 0 -3.8 0; easing : easeInOutQuad;"
+                >
+            </a-entity>
+        </a-entity>
+
+
+        <!-- WF qui bougent -->
+
+
+        <!--        eau qui monte depuis le sol -->
+        <a-entity id="WfSol1"  mixin="WfSol"
+            animation="property: position; dur: 11000; to: 0 15 0; loop: true">
+        </a-entity>
+        <a-entity id="WfSol2"  mixin="WfSol"
+            animation="property: position; delay: 3000; dur: 15000; to: 0 15 0; loop: true">
+        </a-entity>
+        <!--        eau qui bouge depuis la droite -->
+        <a-entity id="WfDroite1"  mixin="WfCotes" position="15 0 0" rotation="180 90 0"
+            animation="property: position; delay: 1000; dur: 30000; to: -15 0 0; loop: true">
+        </a-entity>
+        <!--        eau qui bouge depuis la gauche -->
+        <a-entity id="WfGauche1"  mixin="WfCotes" position="-15 0 0" rotation="0 90 0"
+            animation="property: position; delay: 3000; dur: 25000; to: 15 0 0; loop: true">
+        </a-entity>
+        <!--        eau qui bouge depuis le dos -->
+        <a-entity id="WfDos1"  mixin="WfCotes" position="0 0 15" rotation="180 0 0"
+            animation="property: position; delay: 8000; dur: 28000; to: 0 0 -15; loop: true">
+        </a-entity>
+        <!--        eau qui bouge depuis la face -->
+        <a-entity id="WfFace1"  mixin="WfCotes" position="0 0 -15" rotation="0 0 0"
+            animation="property: position; delay: 4000; dur: 23000; to: 0 0 15; loop: true">
+        </a-entity>
+
+
+
+            
+        
+
+        <!-- mettre les danseurs -->
+        <script>
+            var sceneEl = document.querySelector('a-scene');
+
+            AFRAME.registerComponent('do-something-once-loaded', {
+                init: function () {
+                    // This will be called after the entity has properly attached and loaded.
+                    console.log('I am ready!');
+                }
+            });
+            var limitesDanseurs = 8;
+            var ecartDanseurs = 3.5;
+            var decalage = 0.7;
+            var sizeDecalage = 0.04;
+            var zoneDeJeu = 3;
+            for (var positionX = -limitesDanseurs; positionX <= limitesDanseurs; positionX += ecartDanseurs) {
+                for (var positionZ = -limitesDanseurs; positionZ <= limitesDanseurs; positionZ += ecartDanseurs) {
+                    if (!(positionX > -zoneDeJeu && positionX < zoneDeJeu && positionZ > -zoneDeJeu && positionZ < zoneDeJeu)){
+                        let entityEl = document.createElement('a-entity');
+
+                        var rotationRandom = Math.random() * 360;
+                        var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+                        var decalageX = Math.random() * decalage * plusOrMinus;
+                        plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+                        var decalageZ = Math.random() * decalage * plusOrMinus;
+                        plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+                        var randomSize = Math.random() * sizeDecalage * plusOrMinus;
+                        plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+                        var randomDanse = Math.random() * 0.15 * plusOrMinus;
+
+
+                        entityEl.setAttribute('gltf-model', 'Dancer3.glb');
+
+                        entityEl.setAttribute('position', {
+                            x: positionX + decalageX,
+                            y: 0,
+                            z: positionZ + decalageZ
+                        });
+                        entityEl.setAttribute('rotation', {
+                            x: 0,
+                            y: rotationRandom,
+                            z: 0
+                        });
+                        entityEl.setAttribute('scale', {
+                            x: 0.26 + randomSize,
+                            y: 0.26 + randomSize,
+                            z: 0.26 + randomSize
+                        });
+                        entityEl.setAttribute('material', {
+                            color: '#FFFFFF'
+                        });
+                        entityEl.setAttribute('animation-mixer', {
+                            clip: 'Dance',
+                            timeScale: 1.+randomDanse
+                        });
+                        sceneEl.appendChild(entityEl);
+                    }
+                }
+            }
+        </script>
+
+        <a-sky color="#070D21"></a-sky>
+
+        <!-- <div class="click-son-video">
+            <section><button>ENTER THE OCEAN</button></section>
+        </div> -->
+
+    </a-scene>
+</body>
+
+</html>
