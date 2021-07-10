@@ -1,7 +1,258 @@
+$corail : #FF6F61;
+$gritadelle : #999999;
+$jauneCitadelle : #FEEF6F;
+$mistrigris : #e0e0e0;
+$trestresgris : #111111;
 
 
-body{
-    background-color: teal;
+ul {
+    list-style: none;
+}
+
+input {
+    visibility: hidden;
+}
+
+
+
+#col-projets-design {
+    display: none;
+}
+
+#col-projets-audiovisuel {
+    display: none;
+}
+
+// #pages-content {
+//     div {
+//         display: none;
+//     }
+// }
+
+
+
+.padding-bottom-1{
+    padding-bottom:1rem;
+}
+
+.navbar-citadelle {
+    font-size: 2.5rem !important;
+    font-weight: 200;
+    padding-left: 2rem;
+    //text-align: center;
+}
+
+.navbar-citadelle-bg {
+    background: linear-gradient(rgba(white, 1), rgba(white, 0));
+    padding-bottom: 4rem;
+}
+
+body {
+
+    font-family: Questrial, Aileron2, Aileron, sans-serif;
+    font-weight: normal;
+
+    margin-top: 6rem;
+    height: 100%;
+
+
+    main {
+        padding-top: 3rem;
+
+        .custom-container {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+        .column-div {
+            li {
+                padding-top: 1rem;
+            }
+
+            ul {
+                padding-left: 0rem;
+                margin-left: 0rem;
+            }
+        }
+
+        .everything-down {
+            padding-top: 5.6rem;
+        }
+
+        .column-div-scroll {
+            padding: 1rem;
+            max-height: 12rem;
+            overflow: scroll !important;
+
+        }
+
+        .bottom-line-corail {
+            //border-bottom: solid $mistrigris;
+            z-index: -500;
+            border-width: 0.1rem;
+        }
+
+        .titre-citadelle {
+            font-size: 2.5rem;
+            font-weight: 200;
+        }
+
+        .labeur-citadelle {
+            font-size: 1.3rem;
+            font-weight: 200;
+            text-align: justify;
+        }
+
+        .legende-citadelle {
+            margin-top: 1rem;
+            font-size: 1.3rem;
+            font-weight: 100;
+            font-style: italic;
+        }
+
+        .connexe {
+            top: -2.8rem;
+        }
+
+        .mot-citadelle {
+
+            font-size: 2rem;
+            font-weight: 100;
+            transition: background-color 0.5s;
+
+            label {
+
+                color: black;
+                transition: color 0.2s;
+                display: inline-block;
+                float: left;
+
+                &:hover {
+                    color: white !important;
+                }
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    z-index: -40;
+                    width: 0%;
+                    height: 3rem;
+                    background-color: black;
+                    transition: width 0.4s;
+                }
+
+                &:hover:before {
+                    width: 90%;
+                }
+
+            }
+
+            input {
+
+                &:checked+label {
+                    color: white;
+                }
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    z-index: -40;
+                    width: 0%;
+                    height: 3rem;
+                    background-color: $trestresgris;
+                    transition: width 0.4s;
+                }
+
+                &:checked+label:before {
+                    width: 90%;
+                    background-color: black;
+                }
+
+
+            }
+
+
+
+        }
+
+        .sous-titre-citadelle {
+            font-size: 2rem;
+            font-weight: 100;
+        }
+
+        .texte-citadelle {
+            font-size: 1.5rem;
+            font-weight: 100;
+        }
+
+        .texte-corail {
+            color: $gritadelle;
+            font-style: italic;
+        }
+
+        .texte-fond-corail {
+            background-color: $gritadelle;
+            //color: white;
+            padding-left: 0.15rem;
+            padding-right: 0.15rem;
+        }
+
+    }
+
+}
+
+
+.projet-titre {
+
+    padding-bottom: 0rem;
+    margin-bottom: 0rem;
+    font-size: 4.5rem;
+    font-weight: 100;
+    text-align: right;
+
+}
+
+.projet-date {
+
+    padding-top: 0rem;
+    margin-top: 0rem;
+    padding-right: 0.2rem;
+    font-size: 1.7rem;
+    font-weight: 100;
+    color: #999999;
+    text-align: right;
+
+    margin-bottom: 3rem;
+
+
+}
+
+
+
+.image-et-mots-clefs {
+    padding-bottom: 3rem;
+}
+
+.projet-mots-clefs {
+    font-style: italic;
+    padding-right: 0.2rem;
+    font-size: 1.3rem;
+
+    font-weight: 200;
+    color: #505050;
+
+    text-align: right;
+}
+
+.projet-texte {
+    font-size: 1.3rem;
+    text-align: justify;
+}
+
+.projet-margin{
+    margin-bottom: 2rem;
 }
 
 
@@ -11,43 +262,174 @@ body{
 
 
 
-// Pour le fade in en entrée
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-Black.otf');
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-Heavy.otf');
+    font-style: normal;
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-Bold.otf');
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-SemiBold.otf');
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-Regular.otf');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-Light.otf');
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-Thin.otf');
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-UltraLight.otf');
+    font-style: normal;
+    font-weight: 100;
+}
+
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-BlackItalic.otf');
+    font-style: italic;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-HeavyItalic.otf');
+    font-style: italic;
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-BoldItalic.otf');
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-SemiBoldItalic.otf');
+    font-style: italic;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-RegularItalic.otf');
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-LightItalic.otf');
+    font-style: italic;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-ThinItalic.otf');
+    font-style: italic;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: Aileron2;
+    src: url('../fonts/Aileron-UltraLightItalic.otf');
+    font-style: italic;
+    font-weight: 100;
+}
+
 body {
     animation: fadein 2s;
-      -moz-animation: fadein 2s; /* Firefox */
-      -webkit-animation: fadein 2s; /* Safari and Chrome */
-      -o-animation: fadein 2s; /* Opera */
-  }
-  
-  @keyframes fadein {
+    -moz-animation: fadein 2s;
+    /* Firefox */
+    -webkit-animation: fadein 2s;
+    /* Safari and Chrome */
+    -o-animation: fadein 2s;
+    /* Opera */
+}
+
+
+
+@keyframes fadein {
     from {
-        opacity:0;
+        opacity: 0;
     }
-    to {
-        opacity:1;
-    }
-  }
-  @-moz-keyframes fadein { /* Firefox */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-  }
-  @-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-  }
-  @-o-keyframes fadein { /* Opera */
-    from {
-        opacity:0;
-    }
+
     to {
         opacity: 1;
     }
-  }
+}
+
+@-moz-keyframes fadein {
+
+    /* Firefox */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+
+    /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+
+    /* Opera */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

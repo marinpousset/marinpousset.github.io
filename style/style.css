@@ -1,5 +1,325 @@
+ul {
+  list-style: none;
+}
+
+input {
+  visibility: hidden;
+}
+
+#col-projets-design {
+  display: none;
+}
+
+#col-projets-audiovisuel {
+  display: none;
+}
+
+.padding-bottom-1 {
+  padding-bottom: 1rem;
+}
+
+.navbar-citadelle {
+  font-size: 2.5rem !important;
+  font-weight: 200;
+  padding-left: 2rem;
+}
+
+.navbar-citadelle-bg {
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(white, rgba(255, 255, 255, 0));
+  padding-bottom: 4rem;
+}
+
 body {
-  background-color: teal;
+  font-family: Questrial, Aileron2, Aileron, sans-serif;
+  font-weight: normal;
+  margin-top: 6rem;
+  height: 100%;
+}
+
+body main {
+  padding-top: 3rem;
+}
+
+body main .custom-container {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+body main .column-div li {
+  padding-top: 1rem;
+}
+
+body main .column-div ul {
+  padding-left: 0rem;
+  margin-left: 0rem;
+}
+
+body main .everything-down {
+  padding-top: 5.6rem;
+}
+
+body main .column-div-scroll {
+  padding: 1rem;
+  max-height: 12rem;
+  overflow: scroll !important;
+}
+
+body main .bottom-line-corail {
+  z-index: -500;
+  border-width: 0.1rem;
+}
+
+body main .titre-citadelle {
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+
+body main .labeur-citadelle {
+  font-size: 1.3rem;
+  font-weight: 200;
+  text-align: justify;
+}
+
+body main .legende-citadelle {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: 100;
+  font-style: italic;
+}
+
+body main .connexe {
+  top: -2.8rem;
+}
+
+body main .mot-citadelle {
+  font-size: 2rem;
+  font-weight: 100;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+body main .mot-citadelle label {
+  color: black;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  display: inline-block;
+  float: left;
+}
+
+body main .mot-citadelle label:hover {
+  color: white !important;
+}
+
+body main .mot-citadelle label:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -40;
+  width: 0%;
+  height: 3rem;
+  background-color: black;
+  -webkit-transition: width 0.4s;
+  transition: width 0.4s;
+}
+
+body main .mot-citadelle label:hover:before {
+  width: 90%;
+}
+
+body main .mot-citadelle input:checked + label {
+  color: white;
+}
+
+body main .mot-citadelle input:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -40;
+  width: 0%;
+  height: 3rem;
+  background-color: #111111;
+  -webkit-transition: width 0.4s;
+  transition: width 0.4s;
+}
+
+body main .mot-citadelle input:checked + label:before {
+  width: 90%;
+  background-color: black;
+}
+
+body main .sous-titre-citadelle {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+body main .texte-citadelle {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+body main .texte-corail {
+  color: #999999;
+  font-style: italic;
+}
+
+body main .texte-fond-corail {
+  background-color: #999999;
+  padding-left: 0.15rem;
+  padding-right: 0.15rem;
+}
+
+.projet-titre {
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
+  font-size: 4.5rem;
+  font-weight: 100;
+  text-align: right;
+}
+
+.projet-date {
+  padding-top: 0rem;
+  margin-top: 0rem;
+  padding-right: 0.2rem;
+  font-size: 1.7rem;
+  font-weight: 100;
+  color: #999999;
+  text-align: right;
+  margin-bottom: 3rem;
+}
+
+.image-et-mots-clefs {
+  padding-bottom: 3rem;
+}
+
+.projet-mots-clefs {
+  font-style: italic;
+  padding-right: 0.2rem;
+  font-size: 1.3rem;
+  font-weight: 200;
+  color: #505050;
+  text-align: right;
+}
+
+.projet-texte {
+  font-size: 1.3rem;
+  text-align: justify;
+}
+
+.projet-margin {
+  margin-bottom: 2rem;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-Black.otf");
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-Heavy.otf");
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-Bold.otf");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-SemiBold.otf");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-Light.otf");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-Thin.otf");
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-UltraLight.otf");
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-BlackItalic.otf");
+  font-style: italic;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-HeavyItalic.otf");
+  font-style: italic;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-BoldItalic.otf");
+  font-style: italic;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-SemiBoldItalic.otf");
+  font-style: italic;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-RegularItalic.otf");
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-LightItalic.otf");
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-ThinItalic.otf");
+  font-style: italic;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: Aileron2;
+  src: url("../fonts/Aileron-UltraLightItalic.otf");
+  font-style: italic;
+  font-weight: 100;
 }
 
 body {

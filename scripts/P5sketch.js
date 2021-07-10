@@ -1,29 +1,30 @@
 var canvas;
 
-let removeFadingTime = 2; // en secondes
+let removeFadingTime = 1; // en secondes
 let startingCountdown = false;
-let removeCountdown = removeFadingTime * 30 * 2; // removeFadingTime * frameRate * sécurité
-let population = 80;
+let removeCountdown = removeFadingTime * 30 * 1.1; // removeFadingTime * frameRate * sécurité
+let population = 40;
 
 const flock = [];
 let alignMult = 2;
-let cohesionMult = 2;
-let separationMult = 3;
-let mouseSeparationMult = 10;
+let cohesionMult = 1;
+let separationMult = 2;
+let mouseSeparationMult = 30;
 let maxBoidSpeed = 5;
 
 let speedMultiplier;
-let minSize = 5;
-let maxSize = 30;
-let mouseRepelent = 4;
-let colorNumber = 20;
+let minSize = 0.5;
+let maxSize = 1;
+let mouseRepelent = 10;
+let colorNumber = 10;
 
-function setup(){
+function setup() {
     //Making this work
     frameRate(30);
     canvas = createCanvas(windowWidth, windowHeight, WEBGL);
     canvas.position(0, 0);
-    canvas.style("z-index", "5000");
+    canvas.style("z-index", "-50");
+    canvas.style("position", "fixed");
     canvas.id('canvas');
     colorMode(HSB, colorNumber);
     //
@@ -31,28 +32,41 @@ function setup(){
     for (let i = 0; i < population; i++) {
         flock.push(new Boid());
     }
-}
-function draw(){
 
-    background(255);
-    let mousePosition = createVector(map(mouseX, 0, width, -width/2, width/2), map(mouseY, 0, height, -height/2, height/2));
-    console.log("mouse n°"+random(200)+" is here : "+mousePosition);
+    bg = createGraphics(width, height);
+    bg.background(255, 20);
+    bg.noStroke();
+    for (let i = 0; i < 300000; i++) {
+        let x = random(width);
+        let y = random(height);
+        let s = noise(x * 0.01, y * 0.01) * 2;
+        bg.fill(240, 50);
+        bg.rect(x, y, s, s);
+    }
+}
+
+function draw() {
+
+    //background(255);
+    let mousePosition = createVector(map(mouseX, 0, width, -width / 2, width / 2), map(mouseY, 0, height, -height / 2, height / 2));
+    //console.log("mouse n°"+random(200)+" is here : "+mousePosition);
     for (let boid of flock) {
         boid.edges();
         boid.flock(flock, mousePosition);
         boid.update();
         boid.show();
-    }  
+    }
 
 
     // to remove the canvas after a few seconds when clicked (performances)
-    if(startingCountdown == true){
-        removeCountdown --;
-        if(removeCountdown <= 0){
+    if (startingCountdown == true) {
+        removeCountdown--;
+        if (removeCountdown <= 0) {
             canvas.remove();
         }
     }
     //
+    image(bg, -windowWidth / 2, -windowHeight / 2);
 }
 
 
@@ -63,16 +77,29 @@ function draw(){
 // 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
+    bg = createGraphics(width, height);
+    bg.background(255, 20);
+    bg.noStroke();
+    for (let i = 0; i < 300000; i++) {
+        let x = random(width);
+        let y = random(height);
+        let s = noise(x * 0.01, y * 0.01) * 2;
+        bg.fill(240, 50);
+        bg.rect(x, y, s, s);
+    }
 }
-function mouseClicked(){
+
+function mouseClicked() {
     //shutDown();
 }
-function touchEnded(){
+
+function touchEnded() {
     //shutDown();
 }
+
 function shutDown() {
     canvas.style("transition-property", "opacity");
-    canvas.style("transition-duration", removeFadingTime+"s");
+    canvas.style("transition-duration", removeFadingTime + "s");
     canvas.style("opacity", 0);
     let body = select('#body');
     body.style("overflow", 'scroll');

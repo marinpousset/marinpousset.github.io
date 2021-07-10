@@ -7,22 +7,529 @@
   <title>Marin Pousset</title>
   <!-- <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint"> -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="style/style.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  <!-- Import P5 -->
+  <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
+  </script>
+  <!-- Import JQuerry -->
+  <script src="jQuerry/jquery-3.6.0.min.js"></script>
+  <!-- Les canvas de P5 -->
   <script src="scripts/P5sketch.js"></script>
   <script src="scripts/boid.js"></script>
-
+  <!-- <style>
+    body{
+      overflow: hidden;
+    }
+  </style> -->
 </head>
 
-<body>
-    <header></header>
-    <main></main>
-    <footer></footer>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+
+
+
+
+<body id="body">
+
+  <!-- ICI C'EST LA NAVBAR -->
+  <header>
+
+    <nav class="navbar fixed-top navbar-light navbar-citadelle-bg">
+      <a id="marin" class="navbar-brand navbar-citadelle" href="#">Marin Pousset</a>
+    </nav>
+
+  </header>
+
+
+  <!-- ICI C'EST LE MAIN !!!!! C'EST FOUUUU -->
+  <main>
+    <div class="container-fluid custom-container">
+
+      <!-- ICI C'EST LE LA ROW QUI SÉPARE LES COLONNES -->
+      <div class="row">
+
+
+        <!-- COLONNE DES ONGLETS -->
+
+        <div id="onglets" class="column-div col-md">
+          <ul>
+            <li id="onglet-design" class="mot-citadelle bottom-line-corail">
+
+              <input type='radio' value='1' name='radio' id='radio-design' />
+              <label for='radio-design'>Design</label>
+
+            </li>
+            <li id="onglet-audiovisuel" class="mot-citadelle bottom-line-corail">
+
+              <input type='radio' value='2' name='radio' id='radio-audiovisuel' />
+              <label for='radio-audiovisuel'>Audiovisuel</label>
+
+            </li>
+            <li id="onglet-apropos" class="mot-citadelle bottom-line-corail">
+
+              <input type='radio' value='3' name='radio' id='a-propos' />
+              <label for='a-propos'>À propos</label>
+
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLONNEs DES PROJETS-->
+
+        <div id="projets" class="column-div col-md">
+
+          <!-- Projets de design -->
+          <div id="col-projets-design">
+            <ul>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='1' name='radio2' id='radio-cellule5791' />
+                <label for='radio-cellule5791'>Cellule 5791</label>
+              </li>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='2' name='radio2' id='radio-vyvant' />
+                <label for='radio-vyvant'>Vyvant</label>
+              </li>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='3' name='radio2' id='radio-mentalracing' />
+                <label for='radio-mentalracing'>Mental Racing</label>
+              </li>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='4' name='radio2' id='radio-animalogies' />
+                <label for='radio-animalogies'>Animalogies</label>
+              </li>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='5' name='radio2' id='radio-ticketsplease' />
+                <label for='radio-ticketsplease'>Tickets Please</label>
+              </li>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='6' name='radio2' id='radio-mirare' />
+                <label for='radio-mirare'>Mirare</label>
+              </li>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='7' name='radio2' id='radio-acidesaveux' />
+                <label for='radio-acidesaveux'>Acides Aveux</label>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Projets d'audiovisuel -->
+          <div id="col-projets-audiovisuel">
+            <ul>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='1' name='radio3' id='radio-infrarouge' />
+                <label for='radio-infrarouge'>Infrarouge</label>
+              </li>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='2' name='radio3' id='radio-8monthslag' />
+                <label for='radio-8monthslag'>8-months lag</label>
+              </li>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='3' name='radio3' id='radio-narcoplexie' />
+                <label for='radio-narcoplexie'>Narcoplexie</label>
+              </li>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='4' name='radio3' id='radio-nosvisages' />
+                <label for='radio-nosvisages'>Nos Visages</label>
+              </li>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='5' name='radio3' id='radio-vjing' />
+                <label for='radio-vjing'>Vjing</label>
+              </li>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='6' name='radio3' id='radio-endofnatureir' />
+                <label for='radio-endofnatureir'>End of Nature IR</label>
+              </li>
+              <li id="" class="mot-citadelle bottom-line-corail">
+                <input type='radio' value='7' name='radio3' id='radio-rockenseine' />
+                <label for='radio-rockenseine'>Rock en Seine</label>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+
+        <!-- PAGES QUI DEVIENNENT VISIBLES -->
+
+        <div id="pages-content" class="column-div col-md-7">
+
+          <div id="div-cellule5791">
+            <!-- titre + date -->
+            <p class="projet-titre">Cellule 5791</p>
+            <p class="projet-date">2021</p>
+
+            <!-- photo + mots clefs -->
+            <div class="row image-et-mots-clefs">
+              <div class="col-md-8">
+                <!-- <img src="medias/img/cellule 5791/1.jpg" alt="" loading="lazy" class="img-fluid"> -->
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" loading="lazy" src="https://www.youtube.com/embed/zP99E6F5p9g"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <ul class="projet-mots-clefs">
+                  <li>Projet de diplôme DSAA DCN</li>
+                  <li>Avec Alice Gioia et Pierre Bourdon</li>
+                  <li>Jeu à réalité intégrée</li>
+                  <li>UX-UI</li>
+                  <li>Installation</li>
+                  <li>Contrôle du vivant</li>
+                  <li>Physarum Polycephalum</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- texte explicatif court -->
+            <div class="row projet-margin">
+              <div class="col-md-8">
+                <p class="projet-texte">
+                  Citadelle [Cellule 5791] est un ARG, un jeu à réalité intégrée. Par l’intermédiaire de votre boîte
+                  mail, vous rejoignez les rangs d’une corporation mystérieuse qui vous donne accès à son intranet,
+                  l’interface d’échange de ses employés, contenant un grand nombre de secrets. À travers cette fiction
+                  qui brouille les frontières du réel, vous vous retrouverez responsable d’un incubateur contenant un
+                  être vivant qu’il s’agira de garder en vie.
+                </p>
+              </div>
+            </div>
+
+            <!-- Présentation du projet -->
+            <div class="row projet-margin">
+              <div class="col-md-4">
+                <img src="medias/img/cellule 5791/ordi-cameras.jpg" alt="" loading="lazy" class="img-fluid padding-bottom-1">
+                <img src="medias/img/cellule 5791/ordi-capteurs.jpg" alt="" loading="lazy" class="img-fluid">
+              </div>
+              <div class="col-md-8">
+                <img src="medias/img/cellule 5791/dome-pleinpied.jpg" alt="" loading="lazy" class="img-fluid">
+              </div>
+            </div>
+            <div class="row projet-margin">
+              <div class="col-md-4">
+                <img src="medias/img/cellule 5791/ordi-dome.jpg" alt="" loading="lazy" class="img-fluid padding-bottom-1">
+                <img src="medias/img/cellule 5791/dome-zoom.jpg" alt="" loading="lazy" class="img-fluid">
+
+              </div>
+              <div class="col-md-8">
+                <img src="medias/img/cellule 5791/dome-blob.jpg" alt="" loading="lazy" class="img-fluid">
+              </div>
+            </div>
+
+
+
+            <div class="row projet-margin">
+              <div class="col-md-4">
+                <!-- image de blob -->
+              </div>
+              <div class="col-md-8">
+                <p class="projet-texte">
+                  Cet être vivant dont vous êtes responsable n’est autre qu’un Physarum Polycephalum. Plus couramment
+                  appelé « blob », il s’agit d’ une espèce unicellulaire de myxomycète de l’ordre des Physarales, vivant
+                  dans les milieux frais et humides tels que les tapis de feuilles mortes des forêts ou le bois mort.
+                  Découvert il a environ 200 ans, il est aujourd’hui étudié pour ses capacité d’apprentissage,
+                  d’anticipation et de résolution de labyrinthe. Chez Citadelle, nous cultivons des blobs depuis presque
+                  un an et nous souhaitions transmettre l’affection toute particulière que nous portons à cet organisme,
+                  à travers une rencontre.
+
+                </p>
+              </div>
+            </div>
+
+
+            <div class="row projet-margin">
+              <div class="col-md-8">
+                <div class="embed-responsive embed-responsive-16by9">
+                   <iframe class="embed-responsive-item" loading="lazy"
+                    src="https://www.youtube.com/embed/JVOjXQ-ZSU8?mute=1"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    ></iframe>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div id="div-vyvant">
+            <p>vazijf</p>
+          </div>
+
+          <div id="div-mentalracing">
+            <p>zeveff</p>
+          </div>
+
+          <div id="div-animalogies">
+            <p>vozizoiez</p>
+          </div>
+
+          <div id="div-ticketsplease">
+            <p>oijsovj</p>
+          </div>
+
+          <div id="div-mirare">
+            <p>advjnoib</p>
+          </div>
+
+          <div id="div-acidesaveux">
+            <p>oaojdv</p>
+          </div>
+
+          <div id="div-infrarouge">
+            <p>vahuhafr</p>
+          </div>
+
+          <div id="div-8monthslag">
+            <p>iuhjpez</p>
+          </div>
+
+          <div id="div-narcoplexie">
+            <p>blzbef</p>
+          </div>
+
+          <div id="div-nosvisages">
+            <p>poijaevjf</p>
+          </div>
+
+          <div id="div-vjing">
+            <p>içvnoze</p>
+          </div>
+
+          <div id="div-endofnatureir">
+            <p>endofoiejoj</p>
+          </div>
+
+          <div id="div-rockenseine">
+            <p>vhuianerv</p>
+          </div>
+
+          <div id="div-apropos">
+            <p>prpopokoperfp</p>
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer>
+
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <!-- Script jQuerry -->
+  <script>
+    $(document).ready(function () {
+      $("#pages-content > div").hide();
+    });
+
+
+    $('#marin').click(function () {
+      $("#pages-content > div").hide();
+      $("#col-projets-design").hide();
+      $("#col-projets-audiovisuel").hide();
+
+      $('input[name=radio]:checked').each(function () {
+        this.checked = false;
+      });
+      $('input[name=radio2]:checked').each(function () {
+        this.checked = false;
+      });
+      $('input[name=radio3]:checked').each(function () {
+        this.checked = false;
+      });
+
+
+    })
+
+
+
+    //Selection de l'onglet
+
+    $('#onglets ul').click(function () {
+      let $ongletSelected = $('input[name=radio]:checked').val();
+
+      console.log("selected : " + $ongletSelected);
+
+      switch ($ongletSelected) {
+        case '1':
+          $("#pages-content > div").hide();
+          $("#col-projets-audiovisuel").hide();
+          $('input[name=radio3]:checked').each(function () {
+            this.checked = false;
+          });
+          $("#col-projets-design").show();
+          break;
+        case '2':
+          $("#pages-content > div").hide();
+          $("#col-projets-design").hide();
+
+          $('input[name=radio2]:checked').each(function () {
+            this.checked = false;
+          });
+
+          $("#col-projets-audiovisuel").show();
+          break;
+        case '3':
+          $("#col-projets-design").hide();
+          $("#col-projets-audiovisuel").hide();
+          $('input[name=radio2]:checked').each(function () {
+            this.checked = false;
+          });
+          $('input[name=radio3]:checked').each(function () {
+            this.checked = false;
+          });
+
+          $("#pages-content > div").not("#div-apropos").hide();
+          $("#div-apropos").show();
+
+          break;
+        default:
+          console.log("default");
+          $("#col-projets-design").hide();
+          $("#col-projets-audiovisuel").hide();
+          $('input[name=radio2]:checked').each(function () {
+            this.checked = false;
+          });
+          $('input[name=radio3]:checked').each(function () {
+            this.checked = false;
+          });
+          $("#pages-content > div").hide();
+
+          break;
+
+      }
+
+    })
+
+    //selection du projet
+
+    $('#projets ul').click(function () {
+      let $designSelected = $('input[name=radio2]:checked').val();
+      let $audiovisuelSelected = $('input[name=radio3]:checked').val();
+
+
+      console.log("design selected : " + $designSelected);
+
+      switch ($designSelected) {
+        case '1':
+
+          $("#pages-content > div").not("#div-cellule5791").hide();
+          $("#div-cellule5791").show();
+
+          break;
+        case '2':
+          $("#pages-content > div").not("#div-vyvant").hide();
+          $("#div-vyvant").show();
+
+          break;
+        case '3':
+          $("#pages-content > div").not("#div-mentalracing").hide();
+          $("#div-mentalracing").show();
+
+          break;
+
+        case '4':
+          $("#pages-content > div").not("#div-animalogies").hide();
+          $("#div-animalogies").show();
+
+          break;
+
+        case '5':
+          $("#pages-content > div").not("#div-ticketsplease").hide();
+          $("#div-ticketsplease").show();
+
+          break;
+
+        case '6':
+          $("#pages-content > div").not("#div-mirare").hide();
+          $("#div-mirare").show();
+
+          break;
+
+        case '7':
+          $("#pages-content > div").not("#div-acidesaveux").hide();
+          $("#div-acidesaveux").show();
+
+          break;
+
+      }
+
+      switch ($audiovisuelSelected) {
+        case '1':
+
+          $("#pages-content > div").not("#div-infrarouge").hide();
+          $("#div-infrarouge").show();
+
+          break;
+        case '2':
+          $("#pages-content > div").not("#div-8monthslag").hide();
+          $("#div-8monthslag").show();
+
+          break;
+        case '3':
+          $("#pages-content > div").not("#div-narcoplexie").hide();
+          $("#div-narcoplexie").show();
+
+          break;
+
+        case '4':
+          $("#pages-content > div").not("#div-nosvisages").hide();
+          $("#div-nosvisages").show();
+
+          break;
+
+        case '5':
+          $("#pages-content > div").not("#div-vjing").hide();
+          $("#div-vjing").show();
+
+          break;
+
+        case '6':
+          $("#pages-content > div").not("#div-endofnatureir").hide();
+          $("#div-endofnatureir").show();
+
+          break;
+
+        case '7':
+          $("#pages-content > div").not("#div-rockenseine").hide();
+          $("#div-rockenseine").show();
+
+          break;
+
+      }
+
+      if (designSelected == false && $audiovisuelSelected == false) {
+        $("#pages-content > div").hide();
+      }
+
+    })
+  </script>
+
+
+
+
 </body>
+
+
 </html>
