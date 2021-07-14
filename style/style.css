@@ -171,7 +171,6 @@ body main .texte-citadelle {
 
 body main .texte-corail {
   color: #999999;
-  font-style: italic;
 }
 
 body main .texte-fond-corail {
@@ -204,7 +203,6 @@ body main .texte-fond-corail {
 }
 
 .projet-mots-clefs {
-  font-style: italic;
   padding-right: 0.2rem;
   font-size: 1.3rem;
   font-weight: 200;
