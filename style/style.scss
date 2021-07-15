@@ -60,11 +60,15 @@ body {
 
     margin-top: 6rem;
     height: 100%;
-    background-color: white;
 
-    .P5canvas{
+    @media (prefers-color-scheme: dark) {
         background-color: white;
+        .P5canvas{
+            background-color: white;
+        }
     }
+
+   
 
 
     main {

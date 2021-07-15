@@ -44,11 +44,15 @@ body {
   font-weight: normal;
   margin-top: 6rem;
   height: 100%;
-  background-color: white;
 }
 
-body .P5canvas {
-  background-color: white;
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: white;
+  }
+  body .P5canvas {
+    background-color: white;
+  }
 }
 
 body main {
