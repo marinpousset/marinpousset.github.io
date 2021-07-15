@@ -29,8 +29,11 @@ function setup() {
     colorMode(HSB, colorNumber);
     //
 
-
-    population = map(windowWidth, 0, 2000, 0, 60);
+    if(windowWidth > windowHeight){
+        population = 60;
+    } else {
+        population = 10;
+    }
 
     for (let i = 0; i < population; i++) {
         flock.push(new Boid());
@@ -38,6 +41,7 @@ function setup() {
     //fill(255);
     //rect(0, 0, width, height);
     bg = createGraphics(width, height);
+    bg.noStroke();
     //bg.background(255, 20);
     bg.fill(255, 40);
     bg.rect(0, 0, width, height);
