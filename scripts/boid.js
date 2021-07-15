@@ -183,6 +183,7 @@ class Boid {
       let r = height * 0.03 * this.size + noise(frameCount / this.nm + ind) * height * 0.01 * this.size + sin(frameCount / this.sm + ind) * height * 0.005 * this.size;
       curveVertex(cos(rad) * r, sin(rad) * r);
     }
+    
     endShape();
     pop();
 
