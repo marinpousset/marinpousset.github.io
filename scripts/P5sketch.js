@@ -26,7 +26,7 @@ function setup() {
     canvas.style("z-index", "-50");
     canvas.style("position", "fixed");
     canvas.id('canvas');
-    canvas.background(255);
+    canvas.background(255, 255, 255);
     colorMode(HSB, colorNumber);
     //
 
@@ -44,7 +44,10 @@ function setup() {
         bg.fill(240, 50);
         bg.rect(x, y, s, s);
     }
-           
+            pg = createGraphics(width, height, WEBGL)
+            pg.background(0, 0);
+            image(pg, 0, 0);
+            
 }
 
 function draw() {
