@@ -40,10 +40,14 @@ input {
 }
 
 body {
-  font-family: Questrial, Aileron2, Aileron, sans-serif;
+  font-family: Questrial, sans-serif;
   font-weight: normal;
   margin-top: 6rem;
   height: 100%;
+  background-color: white;
+}
+
+body .P5canvas {
   background-color: white;
 }
 
