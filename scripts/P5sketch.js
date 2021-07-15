@@ -30,7 +30,7 @@ function setup() {
     //
 
 
-    population = map(windowWidth, 0, 2000, 10, 60);
+    population = map(windowWidth, 0, 2000, 0, 60);
 
     for (let i = 0; i < population; i++) {
         flock.push(new Boid());
