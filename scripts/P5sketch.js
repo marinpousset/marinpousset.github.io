@@ -29,6 +29,9 @@ function setup() {
     colorMode(HSB, colorNumber);
     //
 
+
+    population = map(windowWidth, 0, 2000, 10, 60);
+
     for (let i = 0; i < population; i++) {
         flock.push(new Boid());
     }
