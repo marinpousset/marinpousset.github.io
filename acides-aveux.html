@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="style/style.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
   <!-- Import P5 -->
-  <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
-  </script>
+  <!-- <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
+  </script> -->
   <!-- Import JQuerry -->
   <script src="jQuerry/jquery-3.6.0.min.js"></script>
   <!-- Les canvas de P5 -->
@@ -28,8 +28,8 @@
     }
     }
   </script> -->
-  <script src="scripts/P5sketch.js"></script>
-  <script src="scripts/boid.js"></script>
+  <!-- <script src="scripts/P5sketch.js"></script>
+  <script src="scripts/boid.js"></script> -->
   <!-- <style>
     body{
       overflow: hidden;
@@ -49,7 +49,7 @@
   <header>
 
     <nav class="navbar fixed-top navbar-light navbar-citadelle-bg">
-      <a id="marin" class="navbar-brand navbar-citadelle" href="#">Marin Pousset</a>
+      <a id="marin" class="navbar-brand navbar-citadelle" href="index.html">Marin Pousset</a>
     </nav>
 
   </header>
@@ -69,7 +69,7 @@
           <ul>
             <li id="onglet-design" class="mot-citadelle bottom-line-corail">
 
-              <input type='radio' value='1' name='radio' id='radio-design' />
+              <input type='radio' value='1' name='radio' id='radio-design' checked="checked"/>
               <label for='radio-design'>Design</label>
 
             </li>
@@ -96,7 +96,7 @@
           <div id="col-projets-design">
             <ul>
               <li id="" class="mot-citadelle bottom-line-corail">
-                <input type='radio' value='1' name='radio2' id='radio-cellule5791' />
+                <input type='radio' value='1' name='radio2' id='radio-cellule5791' checked="checked"/>
                 <label for='radio-cellule5791'> 
                   <a href="cellule-5791.html">Cellule 5791</a>
                   </label>
@@ -130,7 +130,7 @@
                 <label for='radio-mirare'>Mirare</label>
               </li> -->
               <li id="" class="mot-citadelle bottom-line-corail">
-                <input type='radio' value='7' name='radio2' id='radio-acidesaveux' />
+                <input type='radio' value='7' name='radio2' id='radio-acidesaveux' checked="checked"/>
                 <label for='radio-acidesaveux'>
                   <a href="acides-aveux.html">Acides Aveux</a>
                   </label>
@@ -191,6 +191,98 @@
 
         <div id="pages-content" class="column-div col-lg-7">
 
+          
+  <div id="div-acidesaveux">
+    <!-- titre + date -->
+    <p class="projet-titre">Acides Aveux</p>
+    <p class="projet-date">2019</p>
+
+    <!-- photo + mots clefs -->
+    <div class="row image-et-mots-clefs">
+      <div class="col-lg-8">
+        <img src="medias/img/acides aveux/tryptique.jpg" alt="" loading="lazy" class="img-fluid">
+      </div>
+      <div class="col-lg-4">
+        <ul class="projet-mots-clefs">
+          <li>Série de cartes</li>
+          <li>Génération de textes aléatoires</li>
+          <li>Cryptogramme littéral</li>
+          <li>Composition graphique</li>
+        </ul>
+      </div>
+    </div>
+    <!-- texte explicatif court -->
+    <div class="row projet-margin">
+      <div class="col-lg-8">
+        <p class="projet-texte">
+          Fasciné par les exercices de style autour des textes inattendus et absurdes, j'ai mis au point un
+          générateur de poèmes aléatoires. Ces poèmes sont conditionnés par un indices d'acidité Ph. Plus le
+          poème est acide, plus il sera joyeux, plus il est basique, plus son propos sera mélancholique. Cette
+          classification vient d'une réflexion autour de la propension que l'organisme a d'accepter les
+          substances acides plus facilement que les solutions basiques qui sont pour la plupart nocives pour
+          l'homme, bien que pratiques pour des usages de la vie courante, comme la javel et l'aspirine. </br>
+          Le générateur crée alors des assemblages de mots aléatoires que l'on vient interpréter à notre
+          manière. Ainsi, on peut constater que ce qui construit un poème est le lecteur et sa propre
+          compréhension des textes plutôt que celui qui les écrit.
+        </p>
+      </div>
+    </div>
+    <div class="row projet-margin">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-8">
+        <img src="medias/img/acides aveux/tas-de-cartes.jpg" alt="" loading="lazy" class="img-fluid">
+      </div>
+    </div>
+
+    <div class="row projet-margin fin-de-page">
+      <div class="col-lg-8">
+        <p class="sous-titre-citadelle padding-bottom-2">
+          — ph 11 </br>
+          Mais j'inspire ma timide sensation, mon débris </br>
+          L'accroc se garde, autour de la solitude déprimée </br>
+          Finalement un alcool garde le bâillement de l'échafaud </br>
+          Le ricochet s'imagine, aux côtés de l'espace éternel
+        </p>
+        <p class="sous-titre-citadelle padding-bottom-2">
+          — ph 0</br>
+          Enfin peindre le soleil, amicalement novateur</br>
+          L'apaisement de l'éclair songeur se raconte, tenace</br>
+          Je mords le plaisir, ma contemporaine chance</br>
+          Le repentir de la perle diligente se dérobe, suave
+        </p>
+        <p class="sous-titre-citadelle padding-bottom-2">
+          — ph 6</br>
+          Même si le sein semble déprimé, vide</br>
+          Le colimaçon se tresse, inaccessible du fond bouleversant</br>
+          Ma stimulante divinité brise amoureusement sa catharsis</br>
+          Alors que je répands mon serein déshonneur, mon corps
+        </p>
+        <p class="sous-titre-citadelle padding-bottom-2">
+          — ph 6</br>
+          Il paraît mauvais, le pervers paysage du fanatisme</br>
+          Subtilement, la crainte se remue, plaisante et pacifique</br>
+          Un foyer se touche telle que la volonté, énigmatique</br>
+          Dernièrement un alcool dégage l'essor de l'intuition
+        </p>
+        <p class="sous-titre-citadelle padding-bottom-2">
+          — ph 3</br>
+          Finalement redorer l'immensité, hargneusement magnifique</br>
+          La lucidité du fleuve vague se perd, prétentieuse</br>
+          J'accuse le matin, ma meilleure admiration</br>
+          Elle apparaît juste, la tenace profondeur de la boucherie
+
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <img src="medias/img/acides aveux/carte-acide.jpg" alt="" loading="lazy"
+          class="img-fluid padding-bottom-1">
+        <img src="medias/img/acides aveux/carte-basique.jpg" alt="" loading="lazy" class="img-fluid">
+      </div>
+    </div>
+
+
+
+  </div>
 
           <div id="div-apropos">
             <div class="row projet-margin">
@@ -219,6 +311,7 @@
             </div>
           </div>
 
+
         </div>
 
 
@@ -244,9 +337,13 @@
   </script>
   <!-- Script jQuerry -->
   <script>
+
     $(document).ready(function () {
       $("#pages-content > div").hide();
       jQuery('iframe[src*="https://www.youtube.com/embed/"]').addClass(" youtube-iframe");
+      ongletSelection();
+      projetSelection();
+
     });
 
 
@@ -272,11 +369,7 @@
 
     })
 
-
-
-    //Selection de l'onglet
-
-    $('#onglets ul').click(function () {
+    function ongletSelection(){
       let $ongletSelected = $('input[name=radio]:checked').val();
 
       console.log("selected : " + $ongletSelected);
@@ -329,18 +422,19 @@
           break;
 
       }
+    }
 
+    //Selection de l'onglet
+    $('#onglets ul').click(function () {
+      ongletSelection();
     })
 
     //selection du projet
 
-    $('#projets ul').click(function () {
+    function projetSelection(){
       let $designSelected = $('input[name=radio2]:checked').val();
       let $audiovisuelSelected = $('input[name=radio3]:checked').val();
-
-
       console.log("design selected : " + $designSelected);
-
 
       // $('.youtube-iframe').each(function(){
       //   var video = $(this).attr("src");
@@ -440,7 +534,10 @@
       if (designSelected == false && $audiovisuelSelected == false) {
         $("#pages-content > div").hide();
       }
+    }
 
+    $('#projets ul').click(function () {
+      projetSelection();
     })
   </script>
 

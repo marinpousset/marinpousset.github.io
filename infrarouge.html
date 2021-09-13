@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="style/style.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
   <!-- Import P5 -->
-  <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
-  </script>
+  <!-- <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
+  </script> -->
   <!-- Import JQuerry -->
   <script src="jQuerry/jquery-3.6.0.min.js"></script>
   <!-- Les canvas de P5 -->
@@ -28,8 +28,8 @@
     }
     }
   </script> -->
-  <script src="scripts/P5sketch.js"></script>
-  <script src="scripts/boid.js"></script>
+  <!-- <script src="scripts/P5sketch.js"></script>
+  <script src="scripts/boid.js"></script> -->
   <!-- <style>
     body{
       overflow: hidden;
@@ -49,7 +49,7 @@
   <header>
 
     <nav class="navbar fixed-top navbar-light navbar-citadelle-bg">
-      <a id="marin" class="navbar-brand navbar-citadelle" href="#">Marin Pousset</a>
+      <a id="marin" class="navbar-brand navbar-citadelle" href="index.html">Marin Pousset</a>
     </nav>
 
   </header>
@@ -69,13 +69,13 @@
           <ul>
             <li id="onglet-design" class="mot-citadelle bottom-line-corail">
 
-              <input type='radio' value='1' name='radio' id='radio-design' />
+              <input type='radio' value='1' name='radio' id='radio-design'/>
               <label for='radio-design'>Design</label>
 
             </li>
             <li id="onglet-audiovisuel" class="mot-citadelle bottom-line-corail">
 
-              <input type='radio' value='2' name='radio' id='radio-audiovisuel' />
+              <input type='radio' value='2' name='radio' id='radio-audiovisuel' checked="checked"/>
               <label for='radio-audiovisuel'>Audiovisuel</label>
 
             </li>
@@ -96,7 +96,7 @@
           <div id="col-projets-design">
             <ul>
               <li id="" class="mot-citadelle bottom-line-corail">
-                <input type='radio' value='1' name='radio2' id='radio-cellule5791' />
+                <input type='radio' value='1' name='radio2' id='radio-cellule5791'/>
                 <label for='radio-cellule5791'> 
                   <a href="cellule-5791.html">Cellule 5791</a>
                   </label>
@@ -142,7 +142,7 @@
           <div id="col-projets-audiovisuel">
             <ul>
               <li id="" class="mot-citadelle bottom-line-corail">
-                <input type='radio' value='1' name='radio3' id='radio-infrarouge' />
+                <input type='radio' value='1' name='radio3' id='radio-infrarouge' checked="checked"/>
                 <label for='radio-infrarouge'>
                  <a href="infrarouge.html">Infrarouge</a>
                 </label>
@@ -191,6 +191,55 @@
 
         <div id="pages-content" class="column-div col-lg-7">
 
+            <div id="div-infrarouge">
+                <!-- titre + date -->
+                <p class="projet-titre">Infrarouge</p>
+                <p class="projet-date">depuis 2018</p>
+            
+                <!-- photo + mots clefs -->
+                <div class="row image-et-mots-clefs">
+                  <div class="col-lg-8">
+                    <img src="medias/img/infrarouge/ir-usa-1.jpg" alt="" loading="lazy" class="img-fluid">
+                  </div>
+                  <div class="col-lg-4">
+                    <ul class="projet-mots-clefs">
+                      <li>Série photographique</li>
+                      <li>Appareil photo modifié</li>
+                      <li>Filtres 800nm, 590nm et IR chrome</li>
+                      <li>Rendu IR Aerochrome</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- texte explicatif court -->
+                <div class="row projet-margin">
+                  <div class="col-lg-8">
+                    <p class="projet-texte">
+                      Nos sens nous amènent à considérer une réalité qui nous est propre. Mais les technologies nous
+                      permettent aujourd’hui d'augmenter nos perceptions du réel. À l'aide d'un appareil photo modifié pour
+                      capter les rayonnements infrarouges, je questionne les limites de ma réalité dans une recherche autour
+                      d'une lumière inaccessible à l'œil humain. La technologie peut alors être envisagée comme une façon de
+                      développer et compléter ma manière d'appréhender le monde physique qui m'entoure.
+                    </p>
+                  </div>
+                </div>
+                <div class="row projet-margin fin-de-page">
+                  <div class="col-lg-8">
+                    <img src="medias/img/infrarouge/ir-usa-2.jpg" alt="" loading="lazy" class="img-fluid padding-bottom-1">
+                    <img src="medias/img/infrarouge/ir-usa-3.jpg" alt="" loading="lazy" class="img-fluid padding-bottom-1">
+                    <img src="medias/img/infrarouge/ir-usa-4.jpg" alt="" loading="lazy" class="img-fluid padding-bottom-1">
+                    <img src="medias/img/infrarouge/ir-islande-1.jpg" alt="" loading="lazy"
+                      class="img-fluid padding-bottom-1">
+                    <img src="medias/img/infrarouge/ir-islande-2.jpg" alt="" loading="lazy"
+                      class="img-fluid padding-bottom-1">
+                    <img src="medias/img/infrarouge/ir-auris-1.jpg" alt="" loading="lazy"
+                      class="img-fluid padding-bottom-1">
+                    <img src="medias/img/infrarouge/ir-auris-2.jpg" alt="" loading="lazy" class="img-fluid">
+            
+            
+                  </div>
+                </div>
+            
+              </div>
 
           <div id="div-apropos">
             <div class="row projet-margin">
@@ -219,6 +268,7 @@
             </div>
           </div>
 
+
         </div>
 
 
@@ -244,9 +294,13 @@
   </script>
   <!-- Script jQuerry -->
   <script>
+
     $(document).ready(function () {
       $("#pages-content > div").hide();
       jQuery('iframe[src*="https://www.youtube.com/embed/"]').addClass(" youtube-iframe");
+      ongletSelection();
+      projetSelection();
+
     });
 
 
@@ -272,11 +326,7 @@
 
     })
 
-
-
-    //Selection de l'onglet
-
-    $('#onglets ul').click(function () {
+    function ongletSelection(){
       let $ongletSelected = $('input[name=radio]:checked').val();
 
       console.log("selected : " + $ongletSelected);
@@ -329,18 +379,19 @@
           break;
 
       }
+    }
 
+    //Selection de l'onglet
+    $('#onglets ul').click(function () {
+      ongletSelection();
     })
 
     //selection du projet
 
-    $('#projets ul').click(function () {
+    function projetSelection(){
       let $designSelected = $('input[name=radio2]:checked').val();
       let $audiovisuelSelected = $('input[name=radio3]:checked').val();
-
-
       console.log("design selected : " + $designSelected);
-
 
       // $('.youtube-iframe').each(function(){
       //   var video = $(this).attr("src");
@@ -440,7 +491,10 @@
       if (designSelected == false && $audiovisuelSelected == false) {
         $("#pages-content > div").hide();
       }
+    }
 
+    $('#projets ul').click(function () {
+      projetSelection();
     })
   </script>
 

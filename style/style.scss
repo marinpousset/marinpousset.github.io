@@ -140,8 +140,22 @@ body {
                 &:hover {
                     color: white !important;
                     cursor: pointer;
+                    text-decoration: none;
                 }
 
+
+                a {
+                    color: black;
+                    transition: color 0.2s;
+                    display: inline-block;
+                    float: left;
+
+                    &:hover {
+                        color: white !important;
+                        cursor: pointer;
+                        text-decoration: none;
+                    }
+                }
                 &:before {
                     content: "";
                     display: block;
@@ -157,13 +171,16 @@ body {
                     width: 90%;
                     cursor: pointer;
                 }
-
+                
             }
 
             input {
 
                 &:checked+label {
                     color: white;
+                    a {
+                        color: white;
+                    }
                 }
 
                 &:before {

@@ -120,6 +120,21 @@ body main .mot-citadelle label {
 body main .mot-citadelle label:hover {
   color: white !important;
   cursor: pointer;
+  text-decoration: none;
+}
+
+body main .mot-citadelle label a {
+  color: black;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  display: inline-block;
+  float: left;
+}
+
+body main .mot-citadelle label a:hover {
+  color: white !important;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 body main .mot-citadelle label:before {
@@ -140,6 +155,10 @@ body main .mot-citadelle label:hover:before {
 }
 
 body main .mot-citadelle input:checked + label {
+  color: white;
+}
+
+body main .mot-citadelle input:checked + label a {
   color: white;
 }
 

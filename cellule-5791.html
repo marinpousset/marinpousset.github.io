@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="style/style.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
   <!-- Import P5 -->
-  <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
-  </script>
+  <!-- <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
+  </script> -->
   <!-- Import JQuerry -->
   <script src="jQuerry/jquery-3.6.0.min.js"></script>
   <!-- Les canvas de P5 -->
@@ -28,8 +28,8 @@
     }
     }
   </script> -->
-  <script src="scripts/P5sketch.js"></script>
-  <script src="scripts/boid.js"></script>
+  <!-- <script src="scripts/P5sketch.js"></script>
+  <script src="scripts/boid.js"></script> -->
   <!-- <style>
     body{
       overflow: hidden;
@@ -49,7 +49,7 @@
   <header>
 
     <nav class="navbar fixed-top navbar-light navbar-citadelle-bg">
-      <a id="marin" class="navbar-brand navbar-citadelle" href="#">Marin Pousset</a>
+      <a id="marin" class="navbar-brand navbar-citadelle" href="index.html">Marin Pousset</a>
     </nav>
 
   </header>
@@ -69,7 +69,7 @@
           <ul>
             <li id="onglet-design" class="mot-citadelle bottom-line-corail">
 
-              <input type='radio' value='1' name='radio' id='radio-design' />
+              <input type='radio' value='1' name='radio' id='radio-design' checked="checked"/>
               <label for='radio-design'>Design</label>
 
             </li>
@@ -96,7 +96,7 @@
           <div id="col-projets-design">
             <ul>
               <li id="" class="mot-citadelle bottom-line-corail">
-                <input type='radio' value='1' name='radio2' id='radio-cellule5791' />
+                <input type='radio' value='1' name='radio2' id='radio-cellule5791' checked="checked"/>
                 <label for='radio-cellule5791'> 
                   <a href="cellule-5791.html">Cellule 5791</a>
                   </label>
@@ -191,6 +191,211 @@
 
         <div id="pages-content" class="column-div col-lg-7">
 
+          <div id="div-cellule5791">
+            <!-- titre + date -->
+            <p class="projet-titre">Cellule 5791</p>
+            <p class="projet-date">2021</p>
+
+            <!-- photo + mots clefs -->
+            <div class="row image-et-mots-clefs">
+              <div class="col-lg-8">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zP99E6F5p9g"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <ul class="projet-mots-clefs">
+                  <li>Projet de diplôme DSAA DCN</li>
+                  <li>Avec Alice Gioia et Pierre Bourdon</li>
+                  <li>Jeu à réalité intégrée</li>
+                  <li>UX-UI & Installation</li>
+                  <li>Contrôle d'un Physarum Polycephalum</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- texte explicatif court -->
+            <div class="row projet-margin">
+              <div class="col-lg-8">
+                <p class="projet-texte">
+                  Citadelle [Cellule 5791] est un jeu à réalité intégrée (ARG). Par l’intermédiaire de votre boîte
+                  mail, vous rejoignez les rangs d’une corporation mystérieuse qui vous donne accès à son intranet,
+                  l’interface d’échange de ses employés, contenant un grand nombre de secrets. À travers cette fiction
+                  qui brouille les frontières du réel, vous vous retrouverez responsable d’un incubateur contenant un
+                  être vivant qu’il s’agira de garder en vie.
+                </p>
+              </div>
+            </div>
+
+            <!-- Présentation du projet -->
+            <div class="row projet-margin">
+              <div class="col-lg-4">
+                <img src="medias/img/cellule 5791/ordi-cameras.jpg" alt="" loading="lazy"
+                  class="img-fluid padding-bottom-1">
+                <img src="medias/img/cellule 5791/ordi-capteurs.jpg" alt="" loading="lazy" class="img-fluid">
+              </div>
+              <div class="col-lg-8">
+                <img src="medias/img/cellule 5791/dome-pleinpied.jpg" alt="" loading="lazy" class="img-fluid">
+              </div>
+            </div>
+            <div class="row projet-margin">
+              <div class="col-lg-4">
+                <img src="medias/img/cellule 5791/ordi-dome.jpg" alt="" loading="lazy"
+                  class="img-fluid padding-bottom-1">
+                <img src="medias/img/cellule 5791/dome-zoom.jpg" alt="" loading="lazy" class="img-fluid">
+
+              </div>
+              <div class="col-lg-8">
+                <img src="medias/img/cellule 5791/dome-blob.jpg" alt="" loading="lazy" class="img-fluid">
+              </div>
+            </div>
+
+
+
+            <div class="row projet-margin">
+              <div class="col-lg-4">
+                <!-- image de blob -->
+              </div>
+              <div class="col-lg-8">
+                <p class="projet-texte">
+                  Cet être vivant dont vous êtes responsable n’est autre qu’un Physarum Polycephalum. Plus couramment
+                  appelé «blob», il s’agit d’ une espèce unicellulaire de myxomycète de l’ordre des Physarales, vivant
+                  dans les milieux frais et humides tels que les tapis de feuilles mortes des forêts ou le bois mort.
+                  Découvert il a environ 200 ans, il est aujourd’hui étudié pour ses capacité d’apprentissage,
+                  d’anticipation et de résolution de labyrinthe. Chez Citadelle, nous cultivons des blobs depuis presque
+                  un an et nous souhaitions transmettre l’affection toute particulière que nous portons à cet organisme,
+                  à travers une rencontre.
+
+                </p>
+              </div>
+            </div>
+
+
+            <div class="row projet-margin">
+              <div class="col-lg-8">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" loading="lazy"
+                    src="https://www.youtube.com/embed/JVOjXQ-ZSU8?mute=1" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="row projet-margin">
+              <div class="col-lg-4">
+
+              </div>
+              <div class="col-lg-8">
+                <p class="projet-texte padding-bottom-1">
+                  Un alternate reality game, ou jeu à réalité intégrée, est « un récit interactif en ligne qui met à
+                  profit le monde réel comme une plate-forme et utilise une narration transmédia pour livrer une
+                  histoire qui peut être modifiée par les idées ou les actions des joueurs ». En d’autres termes, il
+                  s’agit d’un jeu à double ancrage : une partie du jeu prend place numériquement, à travers une
+                  interface web par exemple. Parallèlement, certains évènements se déroulent dans la réalité, dans
+                  l’espace physique. On peut ainsi avoir recours à l’utilisation de coordon-nées géographiques et
+                  demander au joueur de se rendre à une certaine localisation pour y trouver un objet par exemple.
+
+                </p>
+                <img src="medias/img/cellule 5791/dome-blueprint.png" alt="" loading="lazy" class="img-fluid">
+              </div>
+            </div>
+
+            <div class="row projet-margin">
+              <div class="col-lg-8">
+                <p class="projet-texte padding-bottom-1">
+                  L’intranet de Citadelle permet au joueur d’accéder à toutes les ressources de la société. Du règlement
+                  intérieur à l’organigramme, il peut ainsi mener l’enquête, découvrir progressivement l’être vivant
+                  dont il devra s’occuper et prendre en main les commandes de l’incubateur pour le faire. Un espace de
+                  messagerie lui permet également d’échanger avec un certain M15381 des ressources humaines, tout comme
+                  recevoir des mails de la part de Citadelle ou de l’incubateur.
+
+                </p>
+                <img src="medias/img/cellule 5791/intranet-bienvenue.png" alt="" loading="lazy" class="img-fluid">
+              </div>
+              <div class="col-lg-4">
+                <img src="medias/img/cellule 5791/intranet-login.png" alt="" loading="lazy"
+                  class="img-fluid padding-bottom-1">
+                <img src="medias/img/cellule 5791/intranet-mail.png" alt="" loading="lazy"
+                  class="img-fluid padding-bottom-1">
+                <img src="medias/img/cellule 5791/intranet-archives.png" alt="" loading="lazy" class="img-fluid">
+              </div>
+            </div>
+
+            <div class="row projet-margin">
+              <div class="col-lg-8">
+                <p class="projet-texte padding-bottom-1">
+                  L’incubateur constitue la partie tangible du jeu, son implémentation dans le monde réel. Cette
+                  structure recouverte de capteurs et de caméras contient Physarum Polycephalum. Ce sont ces capteurs
+                  que le joueur contrôlera progressivement via l’intranet, à distance, dans le but de garder le blob en
+                  vie. Il les débloquera progressivement à travers la narration et l’exploration de l’interface.
+                </p>
+                <img src="medias/img/cellule 5791/dome.png" alt="" loading="lazy" class="img-fluid">
+              </div>
+              <div class="col-lg-4">
+
+              </div>
+            </div>
+
+
+            <div class="row projet-margin">
+
+              <div class="col-lg-8">
+                <p class="projet-texte padding-bottom-1">
+                  Lorsque le joueur a débloqué tous les capteurs et caméras entourant le blob, il lui est proposé de le
+                  rencontrer en lui communiquant l’emplacement de l’incubateur. Il quitte ainsi l’interface web et se
+                  rend
+                  physiquement sur place. Ainsi apparaissent 3 possibilités :</br>
+                  - Le blob est vivant et le joueur décide de l’emporter chez lui.</br>
+                  - Le blob est vivant et le joueur décide de le relâcher dans la nature.</br>
+                  - Le blob est mort.
+                </p>
+              </div>
+              <div class="col-lg-4">
+
+              </div>
+
+            </div>
+
+            <div class="row projet-margin">
+              <img src="medias/img/cellule 5791/domes-3D.png" alt="" loading="lazy"
+                class="img-fluid padding-bottom-2 padding-left-right-1">
+
+              <div class="col-lg-8">
+                <p class="projet-texte padding-bottom-1">
+                  Avec cette expérience, Citadelle a maintenant pour ambition de trouver des partenaires qui
+                  participeraient à la concrétisation de [Cellule 5791]. Nous souhaitons en effet ancrer ce projet dans
+                  une dynamique de médiation arts-sciences, ainsi que le développer sur certains aspects plus sensibles
+                  comme la narration ou encore la communication. Ainsi pourraient être (re)contactés Éric Viennot,
+                  Audrey Dussutour, Anne-Lyse Renon, Nicolas Rodelet, ou encore Steam !
+                </p>
+
+              </div>
+              <div class="col-lg-4">
+
+              </div>
+
+
+            </div>
+            <div class="row projet-margin fin-de-page">
+              <div class="col-lg-4">
+
+              </div>
+              <div class="col-lg-8">
+
+                <img src="medias/img/cellule 5791/domes-cave.png" alt="" loading="lazy" class="img-fluid">
+
+              </div>
+
+            </div>
+
+
+
+          </div>
+
 
           <div id="div-apropos">
             <div class="row projet-margin">
@@ -219,6 +424,7 @@
             </div>
           </div>
 
+
         </div>
 
 
@@ -244,9 +450,13 @@
   </script>
   <!-- Script jQuerry -->
   <script>
+
     $(document).ready(function () {
       $("#pages-content > div").hide();
       jQuery('iframe[src*="https://www.youtube.com/embed/"]').addClass(" youtube-iframe");
+      ongletSelection();
+      projetSelection();
+
     });
 
 
@@ -272,11 +482,7 @@
 
     })
 
-
-
-    //Selection de l'onglet
-
-    $('#onglets ul').click(function () {
+    function ongletSelection(){
       let $ongletSelected = $('input[name=radio]:checked').val();
 
       console.log("selected : " + $ongletSelected);
@@ -329,18 +535,19 @@
           break;
 
       }
+    }
 
+    //Selection de l'onglet
+    $('#onglets ul').click(function () {
+      ongletSelection();
     })
 
     //selection du projet
 
-    $('#projets ul').click(function () {
+    function projetSelection(){
       let $designSelected = $('input[name=radio2]:checked').val();
       let $audiovisuelSelected = $('input[name=radio3]:checked').val();
-
-
       console.log("design selected : " + $designSelected);
-
 
       // $('.youtube-iframe').each(function(){
       //   var video = $(this).attr("src");
@@ -440,7 +647,10 @@
       if (designSelected == false && $audiovisuelSelected == false) {
         $("#pages-content > div").hide();
       }
+    }
 
+    $('#projets ul').click(function () {
+      projetSelection();
     })
   </script>
 

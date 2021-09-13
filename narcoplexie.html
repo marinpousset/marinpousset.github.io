@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="style/style.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
   <!-- Import P5 -->
-  <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
-  </script>
+  <!-- <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
+  </script> -->
   <!-- Import JQuerry -->
   <script src="jQuerry/jquery-3.6.0.min.js"></script>
   <!-- Les canvas de P5 -->
@@ -28,8 +28,8 @@
     }
     }
   </script> -->
-  <script src="scripts/P5sketch.js"></script>
-  <script src="scripts/boid.js"></script>
+  <!-- <script src="scripts/P5sketch.js"></script>
+  <script src="scripts/boid.js"></script> -->
   <!-- <style>
     body{
       overflow: hidden;
@@ -49,7 +49,7 @@
   <header>
 
     <nav class="navbar fixed-top navbar-light navbar-citadelle-bg">
-      <a id="marin" class="navbar-brand navbar-citadelle" href="#">Marin Pousset</a>
+      <a id="marin" class="navbar-brand navbar-citadelle" href="index.html">Marin Pousset</a>
     </nav>
 
   </header>
@@ -69,13 +69,13 @@
           <ul>
             <li id="onglet-design" class="mot-citadelle bottom-line-corail">
 
-              <input type='radio' value='1' name='radio' id='radio-design' />
+              <input type='radio' value='1' name='radio' id='radio-design'/>
               <label for='radio-design'>Design</label>
 
             </li>
             <li id="onglet-audiovisuel" class="mot-citadelle bottom-line-corail">
 
-              <input type='radio' value='2' name='radio' id='radio-audiovisuel' />
+              <input type='radio' value='2' name='radio' id='radio-audiovisuel' checked="checked"/>
               <label for='radio-audiovisuel'>Audiovisuel</label>
 
             </li>
@@ -96,7 +96,7 @@
           <div id="col-projets-design">
             <ul>
               <li id="" class="mot-citadelle bottom-line-corail">
-                <input type='radio' value='1' name='radio2' id='radio-cellule5791' />
+                <input type='radio' value='1' name='radio2' id='radio-cellule5791'/>
                 <label for='radio-cellule5791'> 
                   <a href="cellule-5791.html">Cellule 5791</a>
                   </label>
@@ -154,7 +154,7 @@
                 </label>
               </li>
               <li id="" class="mot-citadelle bottom-line-corail">
-                <input type='radio' value='3' name='radio3' id='radio-narcoplexie' />
+                <input type='radio' value='3' name='radio3' id='radio-narcoplexie' checked="checked"/>
                 <label for='radio-narcoplexie'>
                   <a href="narcoplexie.html">Narcoplexie</a>
                 </label>
@@ -191,6 +191,41 @@
 
         <div id="pages-content" class="column-div col-lg-7">
 
+            <div id="div-narcoplexie">
+                <!-- titre + date -->
+                <p class="projet-titre">Narcoplexie</p>
+                <p class="projet-date">2018</p>
+            
+                <!-- photo + mots clefs -->
+                <div class="row image-et-mots-clefs">
+                  <div class="col-lg-8">
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" loading="lazy" src="https://www.youtube.com/embed/W7Cr5QM6SFA"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <ul class="projet-mots-clefs">
+                      <li>Court métrage</li>
+                      <li>Voix-off imposée</li>
+                      <li>Effets spéciaux</li>
+                      <li>Animations et glitchs</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- texte explicatif court -->
+                <div class="row projet-margin">
+                  <div class="col-lg-8">
+                    <p class="projet-texte">
+                      À partir d'une voix-off d'une camarade de classe dans laquelle elle raconte une paralysie du sommeil,
+                      il m'a été demandé de mettre en images son expérience onirique. J'ai cherché à rendre tangible
+                      l'évolution d'un stress intérieur et un sentiment claustrophobique qui atteindra son apogée.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
           <div id="div-apropos">
             <div class="row projet-margin">
@@ -219,6 +254,7 @@
             </div>
           </div>
 
+
         </div>
 
 
@@ -244,9 +280,13 @@
   </script>
   <!-- Script jQuerry -->
   <script>
+
     $(document).ready(function () {
       $("#pages-content > div").hide();
       jQuery('iframe[src*="https://www.youtube.com/embed/"]').addClass(" youtube-iframe");
+      ongletSelection();
+      projetSelection();
+
     });
 
 
@@ -272,11 +312,7 @@
 
     })
 
-
-
-    //Selection de l'onglet
-
-    $('#onglets ul').click(function () {
+    function ongletSelection(){
       let $ongletSelected = $('input[name=radio]:checked').val();
 
       console.log("selected : " + $ongletSelected);
@@ -329,18 +365,19 @@
           break;
 
       }
+    }
 
+    //Selection de l'onglet
+    $('#onglets ul').click(function () {
+      ongletSelection();
     })
 
     //selection du projet
 
-    $('#projets ul').click(function () {
+    function projetSelection(){
       let $designSelected = $('input[name=radio2]:checked').val();
       let $audiovisuelSelected = $('input[name=radio3]:checked').val();
-
-
       console.log("design selected : " + $designSelected);
-
 
       // $('.youtube-iframe').each(function(){
       //   var video = $(this).attr("src");
@@ -440,7 +477,10 @@
       if (designSelected == false && $audiovisuelSelected == false) {
         $("#pages-content > div").hide();
       }
+    }
 
+    $('#projets ul').click(function () {
+      projetSelection();
     })
   </script>
 

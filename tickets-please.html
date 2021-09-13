@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="style/style.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
   <!-- Import P5 -->
-  <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
-  </script>
+  <!-- <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
+  </script> -->
   <!-- Import JQuerry -->
   <script src="jQuerry/jquery-3.6.0.min.js"></script>
   <!-- Les canvas de P5 -->
@@ -28,8 +28,8 @@
     }
     }
   </script> -->
-  <script src="scripts/P5sketch.js"></script>
-  <script src="scripts/boid.js"></script>
+  <!-- <script src="scripts/P5sketch.js"></script>
+  <script src="scripts/boid.js"></script> -->
   <!-- <style>
     body{
       overflow: hidden;
@@ -49,7 +49,7 @@
   <header>
 
     <nav class="navbar fixed-top navbar-light navbar-citadelle-bg">
-      <a id="marin" class="navbar-brand navbar-citadelle" href="#">Marin Pousset</a>
+      <a id="marin" class="navbar-brand navbar-citadelle" href="index.html">Marin Pousset</a>
     </nav>
 
   </header>
@@ -69,7 +69,7 @@
           <ul>
             <li id="onglet-design" class="mot-citadelle bottom-line-corail">
 
-              <input type='radio' value='1' name='radio' id='radio-design' />
+              <input type='radio' value='1' name='radio' id='radio-design' checked="checked"/>
               <label for='radio-design'>Design</label>
 
             </li>
@@ -96,7 +96,7 @@
           <div id="col-projets-design">
             <ul>
               <li id="" class="mot-citadelle bottom-line-corail">
-                <input type='radio' value='1' name='radio2' id='radio-cellule5791' />
+                <input type='radio' value='1' name='radio2' id='radio-cellule5791'/>
                 <label for='radio-cellule5791'> 
                   <a href="cellule-5791.html">Cellule 5791</a>
                   </label>
@@ -120,7 +120,7 @@
                   </label>
               </li>
               <li id="" class="mot-citadelle bottom-line-corail">
-                <input type='radio' value='5' name='radio2' id='radio-ticketsplease' />
+                <input type='radio' value='5' name='radio2' id='radio-ticketsplease'  checked="checked"/>
                 <label for='radio-ticketsplease'>
                   <a href="tickets-please.html">Tickets Please</a>
                   </label>
@@ -191,6 +191,54 @@
 
         <div id="pages-content" class="column-div col-lg-7">
 
+            <div id="div-ticketsplease">
+                <!-- titre + date -->
+                <p class="projet-titre">Tickets Please</p>
+                <p class="projet-date">2019</p>
+            
+                <!-- photo + mots clefs -->
+                <div class="row image-et-mots-clefs">
+                  <div class="col-lg-8">
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" loading="lazy" src="https://www.youtube.com/embed/POf4gHegW8w"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                      <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/416653129" frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <ul class="projet-mots-clefs">
+                      <li>Avec Alix Galvalda, Jean-Baptiste Krauss, Léo Bindner et Florie Darcieux</li>
+                      <li>Partenariat avec Beta Publisher</li>
+                      <li>Game Jam</li>
+                      <li>Interface tangible dans un jeu vidéo</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- texte explicatif court -->
+                <div class="row projet-margin fin-de-page">
+                  <div class="col-lg-8">
+                    <p class="projet-texte">
+                      Avez-vous déjà rêvé d'incarner un caissier dans un jeu vidéo ? Moi non plus !
+                      Mais maintenant, c'est possible, grâce à notre dernier jeu intitulé Tickets Please. Basé sur une
+                      histoire originale écrite par Florie Darcieux, publiée par Betapublisher, nous avons développé un jeu
+                      pendant une GameJam de trois jours. Vous êtes un commerçant dans une ville paisible de France, mais un
+                      jour, quelqu'un tue le maire ! Vous regardez votre télévision, et les nouvelles locales
+                      sont claires : le tueur était dans votre magasin à l'instant même ! Passez en revue les tickets de
+                      caisse jetés, cherchez des indices, et enquêtez. Une fois que vous êtes certain d'avoir trouvé le
+                      suspect, appelez la police et prévenez-la. Si vous vous trompez, le tueur reviendra, et vous ne
+                      tiendrez pas jusqu'au lendemain matin...
+                      </br>
+                      Le jeu a été développé en C# sur Unity. Il utilise une machine à imprimer des tickets comme principale
+                      source d'information tout au long du jeu. Malheureusement, cela a nécessité beaucoup de papier, même
+                      si ce n'est pas autant que ce qui est gaspillé chaque jour dans les magasins du monde entier.
+                    </p>
+                  </div>
+            
+                </div>
+              </div>
 
           <div id="div-apropos">
             <div class="row projet-margin">
@@ -219,6 +267,7 @@
             </div>
           </div>
 
+
         </div>
 
 
@@ -244,9 +293,13 @@
   </script>
   <!-- Script jQuerry -->
   <script>
+
     $(document).ready(function () {
       $("#pages-content > div").hide();
       jQuery('iframe[src*="https://www.youtube.com/embed/"]').addClass(" youtube-iframe");
+      ongletSelection();
+      projetSelection();
+
     });
 
 
@@ -272,11 +325,7 @@
 
     })
 
-
-
-    //Selection de l'onglet
-
-    $('#onglets ul').click(function () {
+    function ongletSelection(){
       let $ongletSelected = $('input[name=radio]:checked').val();
 
       console.log("selected : " + $ongletSelected);
@@ -329,18 +378,19 @@
           break;
 
       }
+    }
 
+    //Selection de l'onglet
+    $('#onglets ul').click(function () {
+      ongletSelection();
     })
 
     //selection du projet
 
-    $('#projets ul').click(function () {
+    function projetSelection(){
       let $designSelected = $('input[name=radio2]:checked').val();
       let $audiovisuelSelected = $('input[name=radio3]:checked').val();
-
-
       console.log("design selected : " + $designSelected);
-
 
       // $('.youtube-iframe').each(function(){
       //   var video = $(this).attr("src");
@@ -440,7 +490,10 @@
       if (designSelected == false && $audiovisuelSelected == false) {
         $("#pages-content > div").hide();
       }
+    }
 
+    $('#projets ul').click(function () {
+      projetSelection();
     })
   </script>
 

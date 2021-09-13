@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="style/style.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
   <!-- Import P5 -->
-  <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
-  </script>
+  <!-- <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
+  </script> -->
   <!-- Import JQuerry -->
   <script src="jQuerry/jquery-3.6.0.min.js"></script>
   <!-- Les canvas de P5 -->
@@ -28,8 +28,8 @@
     }
     }
   </script> -->
-  <script src="scripts/P5sketch.js"></script>
-  <script src="scripts/boid.js"></script>
+  <!-- <script src="scripts/P5sketch.js"></script>
+  <script src="scripts/boid.js"></script> -->
   <!-- <style>
     body{
       overflow: hidden;
@@ -49,7 +49,7 @@
   <header>
 
     <nav class="navbar fixed-top navbar-light navbar-citadelle-bg">
-      <a id="marin" class="navbar-brand navbar-citadelle" href="#">Marin Pousset</a>
+      <a id="marin" class="navbar-brand navbar-citadelle" href="index.html">Marin Pousset</a>
     </nav>
 
   </header>
@@ -69,7 +69,7 @@
           <ul>
             <li id="onglet-design" class="mot-citadelle bottom-line-corail">
 
-              <input type='radio' value='1' name='radio' id='radio-design' />
+              <input type='radio' value='1' name='radio' id='radio-design' checked="checked"/>
               <label for='radio-design'>Design</label>
 
             </li>
@@ -114,7 +114,7 @@
                   </label>
               </li>
               <li id="" class="mot-citadelle bottom-line-corail">
-                <input type='radio' value='4' name='radio2' id='radio-animalogies' />
+                <input type='radio' value='4' name='radio2' id='radio-animalogies' checked="checked"/>
                 <label for='radio-animalogies'>
                   <a href="alterealite.html">Alteréalité</a>
                   </label>
@@ -191,6 +191,45 @@
 
         <div id="pages-content" class="column-div col-lg-7">
 
+            <div id="div-animalogies">
+                <!-- titre + date -->
+                <p class="projet-titre">Alteréalité</p>
+                <p class="projet-date">2020</p>
+            
+                <!-- photo + mots clefs -->
+                <div class="row image-et-mots-clefs">
+                  <div class="col-lg-8">
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" loading="lazy" src="aframe/AFRAME_Deep_Ocean/vision.html"
+                        allowfullscreen="yes" allowvr="yes"></iframe>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <ul class="projet-mots-clefs">
+                      <li>Expérience VR</li>
+                      <li>Boîte de nuit du futur</li>
+                      <li>Création musicale</li>
+                      <li>Danse intime</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- texte explicatif court -->
+                <div class="row projet-margin">
+                  <div class="col-lg-8">
+                    <p class="projet-texte">
+                      Vous êtes plongés dans l’océan du futur. Des avatars y dansent frénétiquement et il ne tient qu’à vous
+                      de venir les rejoindre. Comment vivrez-vous l’expérience d’une danse intime, seul avec d’autres, au
+                      sein de cette expérience de réalité virtuelle ?
+                      </br>
+                      Essayez dès maintenant avec le son à <a href="aframe/AFRAME_Deep_Ocean/deep_ocean.html">cet
+                        endroit</a>.
+            
+                    </p>
+                  </div>
+            
+                </div>
+            
+              </div>
 
           <div id="div-apropos">
             <div class="row projet-margin">
@@ -219,6 +258,7 @@
             </div>
           </div>
 
+
         </div>
 
 
@@ -244,9 +284,13 @@
   </script>
   <!-- Script jQuerry -->
   <script>
+
     $(document).ready(function () {
       $("#pages-content > div").hide();
       jQuery('iframe[src*="https://www.youtube.com/embed/"]').addClass(" youtube-iframe");
+      ongletSelection();
+      projetSelection();
+
     });
 
 
@@ -272,11 +316,7 @@
 
     })
 
-
-
-    //Selection de l'onglet
-
-    $('#onglets ul').click(function () {
+    function ongletSelection(){
       let $ongletSelected = $('input[name=radio]:checked').val();
 
       console.log("selected : " + $ongletSelected);
@@ -329,18 +369,19 @@
           break;
 
       }
+    }
 
+    //Selection de l'onglet
+    $('#onglets ul').click(function () {
+      ongletSelection();
     })
 
     //selection du projet
 
-    $('#projets ul').click(function () {
+    function projetSelection(){
       let $designSelected = $('input[name=radio2]:checked').val();
       let $audiovisuelSelected = $('input[name=radio3]:checked').val();
-
-
       console.log("design selected : " + $designSelected);
-
 
       // $('.youtube-iframe').each(function(){
       //   var video = $(this).attr("src");
@@ -440,7 +481,10 @@
       if (designSelected == false && $audiovisuelSelected == false) {
         $("#pages-content > div").hide();
       }
+    }
 
+    $('#projets ul').click(function () {
+      projetSelection();
     })
   </script>
 

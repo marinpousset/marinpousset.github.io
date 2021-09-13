@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="style/style.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
   <!-- Import P5 -->
-  <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
-  </script>
+  <!-- <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js">
+  </script> -->
   <!-- Import JQuerry -->
   <script src="jQuerry/jquery-3.6.0.min.js"></script>
   <!-- Les canvas de P5 -->
@@ -28,8 +28,8 @@
     }
     }
   </script> -->
-  <script src="scripts/P5sketch.js"></script>
-  <script src="scripts/boid.js"></script>
+  <!-- <script src="scripts/P5sketch.js"></script>
+  <script src="scripts/boid.js"></script> -->
   <!-- <style>
     body{
       overflow: hidden;
@@ -49,7 +49,7 @@
   <header>
 
     <nav class="navbar fixed-top navbar-light navbar-citadelle-bg">
-      <a id="marin" class="navbar-brand navbar-citadelle" href="#">Marin Pousset</a>
+      <a id="marin" class="navbar-brand navbar-citadelle" href="index.html">Marin Pousset</a>
     </nav>
 
   </header>
@@ -69,7 +69,7 @@
           <ul>
             <li id="onglet-design" class="mot-citadelle bottom-line-corail">
 
-              <input type='radio' value='1' name='radio' id='radio-design' />
+              <input type='radio' value='1' name='radio' id='radio-design' checked="checked"/>
               <label for='radio-design'>Design</label>
 
             </li>
@@ -96,13 +96,13 @@
           <div id="col-projets-design">
             <ul>
               <li id="" class="mot-citadelle bottom-line-corail">
-                <input type='radio' value='1' name='radio2' id='radio-cellule5791' />
+                <input type='radio' value='1' name='radio2' id='radio-cellule5791'/>
                 <label for='radio-cellule5791'> 
                   <a href="cellule-5791.html">Cellule 5791</a>
                   </label>
               </li>
               <li id="" class="mot-citadelle bottom-line-corail">
-                <input type='radio' value='2' name='radio2' id='radio-vyvant' />
+                <input type='radio' value='2' name='radio2' id='radio-vyvant'  checked="checked"/>
                 <label for='radio-vyvant'>
                   <a href="vyvant.html">Vyvant</a>
                 </label>
@@ -192,6 +192,101 @@
         <div id="pages-content" class="column-div col-lg-7">
 
 
+          <div id="div-vyvant">
+            <!-- titre + date -->
+            <p class="projet-titre">Vyvant</p>
+            <p class="projet-date">2021</p>
+
+            <!-- photo + mots clefs -->
+            <div class="row image-et-mots-clefs">
+              <div class="col-lg-8">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" loading="lazy" src="https://www.youtube.com/embed/Zmd8norf_Zw"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <ul class="projet-mots-clefs">
+                  <li>Recherche & mémoire</li>
+                  <li>Vie numérique</li>
+                  <li>Simulation informatique</li>
+                  <li>Création d'un écosystème</li>
+                  <li>Création d'un vyvant</li>
+                </ul>
+              </div>
+            </div>
+            <!-- texte explicatif court -->
+            <div class="row projet-margin">
+              <div class="col-lg-8">
+                <p class="projet-texte">
+                  À travers mon mémoire de fin d’études, j’ai exploré la possibilité d’un vivant numérique. Après avoir
+                  étudié le comportement des boids de Craig Reynolds (dont j’ai codé ma propre version avec laquelle
+                  vous pouvez interagir dans l’arrière-plan de ce site), j’ai voulu transcrire une nouvelle définition
+                  du vivant en organisme numérique. Un être est considéré comme "vyvant", s’il est capable de
+                  métaboliser de l’énergie, d’auto-catalyse, d’homéostasie, et d’apprentissage. J’ai ainsi créé un
+                  organisme numérique possédant son propre ADN et ses propres comportements vyvants dans un milieu
+                  numérique.
+                </p>
+              </div>
+            </div>
+
+            <div class="row projet-margin">
+              <div class="col-lg-4"></div>
+              <div class="col-lg-8">
+                <p class="projet-texte">
+                  L’ADN de cet organisme définit sa taille, sa vitesse, son champ de vision (visible avec le plus grand
+                  cercle de chaque créature), mais aussi son agressivité et sa prudence. Plus créature est performante,
+                  plus elle consommera d’énergie. Lorsque une créature est à court d’énergie, elle meurt. Si un
+                  organisme a l’occasion de se nourrir, il regagne de l’énergie et il peut alors donner naissance à une
+                  progéniture qui possédera presque les mêmes caractéristiques qu’elle à cela près des mutations
+                  génétiques.
+                </p>
+              </div>
+            </div>
+
+            <div class="row projet-margin">
+              <div class="col-lg-4">
+                <img src="medias/img/vyvant/petit-herbivore.png" alt="" loading="lazy"
+                  class="padding-bottom-1 img-fluid">
+                <img src="medias/img/vyvant/predateur.png" alt="" loading="lazy" class="padding-bottom-1 img-fluid">
+                <img src="medias/img/vyvant/grand-herbivore.png" alt="" loading="lazy"
+                  class="padding-bottom-1 img-fluid">
+                <img src="medias/img/vyvant/hybride.png" alt="" loading="lazy" class="padding-bottom-1 img-fluid">
+              </div>
+              <div class="col-lg-8">
+                <p class="projet-texte">
+                  On peut ainsi voir apparaître différentes stratégies de survie au sein de la simulation. On notamment
+                  déceler des petits herbivores qui se multiplient grâce à la nourriture qui apparaît ponctuellement
+                  dans la simulation. On trouve aussi des prédateurs qui se nourrissent des petits herbivores. Leur
+                  agressivité est telle qu’ils sont devenus carnivores et ne peuvent se nourrir qu’au gré des ressources
+                  disponibles en petits herbivores. Certains herbivores sont devenu des géants qui ne craignent plus les
+                  prédateurs. Néanmoins, leur grande taille les oblige à se nourrir très régulièrement pour espérer
+                  survivre. Enfin, on peut aussi noter la présence de créatures omnivores, capables de se nourrir de
+                  végétaux autant que de créatures plus petites grâce à une agressivité modérée. Bien qu’efficace sur le
+                  papier, la grande consommation énergétique de ces créatures les rendent plus fragiles et rares.
+
+                </p>
+              </div>
+            </div>
+
+            <div class="row projet-margin fin-de-page">
+              <div class="col-lg-8">
+                <p class="projet-texte">
+                  Le code de cette simulation est disponible en accès libre sur <a
+                    href="https://github.com/marinpousset/Lyving-system-with-evolution-in-Processing">GitHub</a> !
+
+                </p>
+              </div>
+            </div>
+
+
+
+
+          </div>
+
+
           <div id="div-apropos">
             <div class="row projet-margin">
               <div class="col-lg-4">
@@ -219,6 +314,7 @@
             </div>
           </div>
 
+
         </div>
 
 
@@ -244,9 +340,13 @@
   </script>
   <!-- Script jQuerry -->
   <script>
+
     $(document).ready(function () {
       $("#pages-content > div").hide();
       jQuery('iframe[src*="https://www.youtube.com/embed/"]').addClass(" youtube-iframe");
+      ongletSelection();
+      projetSelection();
+
     });
 
 
@@ -272,11 +372,7 @@
 
     })
 
-
-
-    //Selection de l'onglet
-
-    $('#onglets ul').click(function () {
+    function ongletSelection(){
       let $ongletSelected = $('input[name=radio]:checked').val();
 
       console.log("selected : " + $ongletSelected);
@@ -329,18 +425,19 @@
           break;
 
       }
+    }
 
+    //Selection de l'onglet
+    $('#onglets ul').click(function () {
+      ongletSelection();
     })
 
     //selection du projet
 
-    $('#projets ul').click(function () {
+    function projetSelection(){
       let $designSelected = $('input[name=radio2]:checked').val();
       let $audiovisuelSelected = $('input[name=radio3]:checked').val();
-
-
       console.log("design selected : " + $designSelected);
-
 
       // $('.youtube-iframe').each(function(){
       //   var video = $(this).attr("src");
@@ -440,7 +537,10 @@
       if (designSelected == false && $audiovisuelSelected == false) {
         $("#pages-content > div").hide();
       }
+    }
 
+    $('#projets ul').click(function () {
+      projetSelection();
     })
   </script>
 
